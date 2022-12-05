@@ -17,7 +17,7 @@ timer = setInterval(function () {
   day = [Date().split(' ')[0],Date().split(' ')[2]];
   time = Date().split(' ')[4];
   document.getElementById('subtitle').innerText = Date();
-  showTime();
+  showTime();//hearthbeat();
 }, 500);
 
 function showTime() {

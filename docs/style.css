@@ -97,7 +97,7 @@ span#minus {
 .indicator {
   white-space: pre;
   font-size: 10pt;
-  margin: unset;
+  margin: 2px 0;
 }
 
 .indicator.equip {
@@ -126,7 +126,7 @@ span#minus {
   /* background: rgb(255 255 255 / 25%); */
 }
 
-#item, #pet, #crate{
+#item, #pet, #crate, #main{
   display: flex;
   /* margin: 16px; */
   height: 256px;
@@ -142,7 +142,7 @@ span#minus {
 }
 
 
-#item-text, #pet-text, #crate-text, #stats-text {
+#item-text, #pet-text, #crate-text, #stats-text, #main-text {
   margin: unset;
   padding: 8px 0px;
   cursor: default;
@@ -195,5 +195,6 @@ span#minus {
 
 /****/
 #main {
-  
+  margin: 0 16px;
+  width: unset;
 }
