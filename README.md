@@ -10,7 +10,7 @@ This game inspired from a <a title="Source needed!">Whatsapp Bot RPG</a> game an
 
 ## 💠Upcoming Feature & Concept
  Job you can do
-	- 
+- This section is unavailable, the developer have no time to do and currently doing another job
 
 >I also planned to port the game to mobile in the future, but i still considering using a framework (like [Cordova](https://cordova.apache.org/ "Cordova")) or keep it on the web.
 
@@ -21,4 +21,8 @@ But if you want to try it earlier, just clone this repository and open `index.ht
 
     git clone https://github.com/coder-newcomer/consoleRPG.git
 
-You can also hosting it whatever you want.
+You can also hosting it whatever you want. Or try the [GitHub pages](https://coder-newcomer.github.io/consoleRPG/ "GitHub pages") one.
+
+## License
+<iframe src="http://example.com">
+</iframe>
