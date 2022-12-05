@@ -16,3 +16,5 @@ Cause this project is still in being developed, all of feature mentioned above a
 But if you want to try it earlier, just clone this repository and open `index.html` file on `docs` directory in your browser. 
 
     git clone consoleRPG
+
+You can also hosting it whatever you want
