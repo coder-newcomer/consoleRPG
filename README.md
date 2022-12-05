@@ -3,10 +3,11 @@ An <a href="https://wikipedia.org/wiki/RPG" title="Role-playing game (RPG)">RPG<
 
 ## Description
 > Note: This project is still in early development. Unusable for now!
+> 
+Its focused as casual RPG game on a web. What you need is just playing it like clicking button, managing item, creating, mining, foraging, fight, waiting, <u title="if you now what i mean of this">gacha</u>, and/or do anything you can do inside the game.
 
-Its focused as casual RPG game on a web. What you need is just playing it like clicking button, managing item, creating, mining, foraging, fight, waiting, <u title="if you now what i mean of this">gacha</u>, and/or do anything you can inside the game.
+This game inspired from a <a title="Source needed!">Whatsapp Bot RPG</a> game and the original RPG game element. But because of limitations of my devices that cannot use any of game engine and my knowledge, i try to bring it on web instead.
 
-This game inspired from a <a title="Source needed!">Whatsapp Bot RPG</a> game and the original RPG game element. But because of limitations of my devices that cannot use any of game engine and my knowledge, i try to bring it on web instead. 
 > Note: I also planned to port the game to mobile in the future, but i still considering using a framework (like [Cordova](https://cordova.apache.org/ "Cordova")) or keep it on the web.
 
 ## Installation & Setup
