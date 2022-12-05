@@ -1,0 +1,15 @@
+📦🟡🔵🟢🟣❔
+
+🗡️ WEAPON 	ATK	CRT
+🦺 ARMOR  	DEF	POW
+👟 BOOT   	SPD	LUK
+
+🔪 ATK: Basic attack damage given to the target
+🛡️ DEF: Defense will decrease attack given to player
+👟 SPD: Basic speed movement for walk/moving or avoid attacks
+💥 CRT: Additional given damage when successfully doing combo
+💪🏻 POW: Additional given power to increase skill effectiveness
+🍀 LUK: Your luck, only applies to everything that relies on luck or randomness
+	  Doesn't applied on fight and not guaranteed 100%
+
+Kisah Roger Sumatra dan Katak Acumalaka
