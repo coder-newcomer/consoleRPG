@@ -9,6 +9,7 @@ This game inspired from a <a title="Source needed!">Whatsapp Bot RPG</a> game an
 > Note: This project is still in early development. Unusable for now!
 
 ## 💠Upcoming Feature & Concept
+
 - Job you can do
 	- 
 
