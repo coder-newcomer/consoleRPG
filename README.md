@@ -9,8 +9,7 @@ This game inspired from a <a title="Source needed!">Whatsapp Bot RPG</a> game an
 > Note: This project is still in early development. Unusable for now!
 
 ## 💠Upcoming Feature & Concept
-
-- Job you can do
+ Job you can do
 	- 
 
 >I also planned to port the game to mobile in the future, but i still considering using a framework (like [Cordova](https://cordova.apache.org/ "Cordova")) or keep it on the web.
