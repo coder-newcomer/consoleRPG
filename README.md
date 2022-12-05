@@ -10,11 +10,11 @@ This game inspired from a <a title="Source needed!">Whatsapp Bot RPG</a> game an
 
 ## 💠Upcoming Feature & Concept
  Job you can do
-- This section is unavailable for now because the developer is busy
+- This section is unavailable, the developer have no time to do and currently doing another job
 
 >I also planned to port the game to mobile in the future, but i still considering using a framework (like [Cordova](https://cordova.apache.org/ "Cordova")) or keep it on the web.
 
-## Installation & Setup
+## ⚙️Installation & Setup
 Cause this project is still in being developed, all of feature mentioned above are not available for now (also concept may change later). But i planned that feature could be realize in the future.
 
 But if you want to try it earlier, just clone this repository and open `index.html` file on `docs` directory in your browser. 
@@ -23,6 +23,7 @@ But if you want to try it earlier, just clone this repository and open `index.ht
 
 You can also hosting it whatever you want. Or try the [GitHub pages](https://coder-newcomer.github.io/consoleRPG/ "GitHub pages") one.
 
-## License
-<iframe src="http://example.com">
-</iframe>
+## 📜License
+This project using [GNU General Public License v3.0](https://github.com/coder-newcomer/consoleRPG/blob/main/LICENSE "GNU General Public License v3.0")
+
+Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
