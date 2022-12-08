@@ -1,5 +1,5 @@
 # 🍀consoleRPG
-An [RPG](https://wikipedia.org/wiki/RPG "Role-playing game (RPG)") Game made with [HTML](https://wikipedia.org/wiki/HTML "Hypertext Markup Language"), [CSS](https://wikipedia.org/wiki/CSS "Cascading Style Sheet"), [Javascript](https://id.wikipedia.org/wiki/JavaScript "Javascript"), and some web framework<sup><a href="#Technology used on this project:" title="See below">[↓]</a></sup> for the GUI.
+An [RPG](https://wikipedia.org/wiki/RPG "Role-playing game (RPG)") Game made with [HTML](https://wikipedia.org/wiki/HTML "Hypertext Markup Language"), [CSS](https://wikipedia.org/wiki/CSS "Cascading Style Sheet"), [Javascript](https://id.wikipedia.org/wiki/JavaScript "Javascript"), and some web [framework](#Technology used on this project: "See below") for the GUI.
 
 ## 📄Description & Inpiration
 It is focused as casual RPG game on a web. What you need is just playing it like clicking button, managing item, creating, mining, foraging, fight, waiting, gacha, and/or do anything you can do inside the game.
@@ -36,6 +36,6 @@ Permissions of this strong copyleft license are conditioned on making available 
 - [Bootstrap](https://getbootstrap.com/ "Bootstrap") 5.2.3 (all file are included in the source and backup directory).
 - ~~[Google Material Design 2](https://m2.material.io/ "Google Material Design 2") web component.~~ (Temporary unavailable)
 
-#####Resource used on this Project:
+##### Resource used on this Project:
 - Font (Tahoma, Trebuchet MS, Consolas, Product Sans)
 - Most icon is gathered based on your system emoji font (I use emoji for icon instead of image), but for the logo/favicon (🍀) ~~it is from Segoe UI Emoji font by Microsoft.~~
