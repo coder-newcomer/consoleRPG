@@ -1,5 +1,5 @@
 # 🍀consoleRPG
-An [RPG](https://wikipedia.org/wiki/RPG "Role-playing game (RPG)") Game made with [HTML](https://wikipedia.org/wiki/HTML "Hypertext Markup Language"), [CSS](https://wikipedia.org/wiki/CSS "Cascading Style Sheet"), [Javascript](https://id.wikipedia.org/wiki/JavaScript "Javascript"), and some web [framework](#Technology used on this project: "See below") for the GUI.
+An [RPG](https://wikipedia.org/wiki/RPG "Role-playing game (RPG)") Game made with [HTML](https://wikipedia.org/wiki/HTML "Hypertext Markup Language"), [CSS](https://wikipedia.org/wiki/CSS "Cascading Style Sheet"), [Javascript](https://id.wikipedia.org/wiki/JavaScript "Javascript"), and some web [framework](#technology-used-on-this-project "See below") for the GUI.
 
 ## 📄Description & Inpiration
 It is focused as casual RPG game on a web. What you need is just playing it like clicking button, managing item, creating, mining, foraging, fight, waiting, gacha, and/or do anything you can do inside the game.
