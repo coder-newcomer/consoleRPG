@@ -21,7 +21,7 @@ timer = setInterval(function () {
 }, 500);
 
 function showTime() {
-  document.getElementById('subtitle').innerText
+  //document.getElementById('subtitle').innerText
 };
 
 function doConsoleCleaner() {

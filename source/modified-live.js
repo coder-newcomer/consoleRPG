@@ -236,5 +236,5 @@
     window.liveJsLoaded = true;
   }
   else if (window.console)
-    console.error('Live.js doesn\'t support "file://" protocol. Its need "http://"');
+    console.error('Live.js doesn\'t support "file://" protocol. It\'s need "http://"');
 })();

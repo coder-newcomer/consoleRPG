@@ -1,117 +1,29 @@
 <!doctype html>
-<html version="0.2055a">
+<html version="0.0182a">
   <head>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="style/style.css">
     <meta charset="utf-8">
     <title>consoleRPG - play RPG game on console</title>
+    <!-- Third party link -->
+    <link rel="stylesheet" href="source/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <!-- link rel="stylesheet" href="source/m2-web/material-components-web.min.css" Need mapping!-->
   </head>
   <body>
     <document id="full">
       <header>
-        <a href style="text-decoration: none;" title="😲"><h1 id="title">🕹️🎮 <span id="text">console</span><span id="RPG">RPG</span><span id="minus"> - </span>Input command! 🎮🕹️</h1></a>
-        <p id="subtitle">This is the GUI version of game, Enjoy! 😎</p>
+        <a href id="title">🎮🕹️<span class="t1"> console</span><span class="t2">RPG</span><span class="t3"> - </span>Let's play!🕹️🎮</a>
       </header>
-      <div id="dashboard">
-        <div id="topboard">
-          <div id="profile">
-            <img id="profile-img" src="asset/DefaultAccountTile.png" height="64">
-            <p id="profile-name">akungamesukasuka 🎮</p>
-          </div>
-          <div id="player">
-            <div id="player-top">
-              <span class="indicator equip" id="rank" title="Rank">⚜️ Mythic</span>
-              <span class="indicator equip" id="hp" title="HP">♥️ 5000/5000</span>
-            </div>
-            <div id="player-center">
-              <span class="indicator equip" id="level" title="Level">🏅 60</span>
-              <span class="indicator equip" id="energy" title="Energy">🔋 500/500</span>
-            </div>
-            <div id="player-bottom">
-              <span class="indicator equip" id="xp" title="XP">✨ 9999999</span>
-              <span class="indicator equip" id="money" title="Money">💵 9999999</span>
-            </div>
-          </div>
-        </div>
-        <div id="stats">
-          <p id="stats-text" title="Your statistics and equipment">📊 STATS</p>
-          <div id="stats-list">
-            <div id="equipment">
-              <span class="indicator" id="weapon">🗡️ Lightsaber (lv. 10)</span>
-              <span class="indicator" id="armor">🦺 Hyperion Suit (lv. 10)</span>
-              <span class="indicator" id="boots">🥾 Space Boots (lv. 10)</span>
-            </div>
-            <div id="rpg-stats">
-              <div class="rpg-stats" id="rpg-stats-top">
-                <span class="indicator" id="atk" title="Basic attack damage given to the target">🔪 ATK: 8238 </span>
-                <span class="indicator" id="def" title="Defense will decrease attack given to player">🛡️ DEF: 622 </span>
-                <span class="indicator" id="spd" title="Basic speed movement for walk/moving or avoid attacks">👟 SPD: 325 </span>
-              </div>
-              <div class="rpg-stats" id="rpg-stats-right">
-                <span class="indicator" id="crt" title="Additional given damage when successfully doing combo">💥 CRT: 23%</span>
-                <span class="indicator" id="pow" title="Additional given power to increase skill effectiveness">💪🏻 POW: 38%</span>
-                <span class="indicator" id="luk" title="Your luck, only applies to everything that relies on luck or randomness
-Doesn't applied on fight and not guaranteed 100%">🍀 LUK: 28%</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <b id="subtitle"></b>
       </div>
-      <div id="inventory">
-        <div id="item">
-          <p id="item-text" title="Your items stored here">🎒 ITEMS</p>
-        </div>
-        <div id="pet">
-          <p id="pet-text" title="Animal you tamed or buy from store are here">🦴 PETS</p>
-        </div>
-      </div>
-      <div id="crate">
-        <p id="crate-text" title="Crate you gathered from everywhere are stored here">📥 CRATE</p>
-        <div id="crate-list">
-          <div class="crate-button" id="common-crate" title="A common crate contain common items and potion">
-            <div class="crate-count-icon">
-              <span class="crate-icon">📦</span>
-              <span class="crate-count" id="common-count">99</span>
-            </div>
-            <span class="crate-span">Common</span>
-          </div>
-          <div class="crate-button" id="uncommon-crate" title="Uncommon crate contain some common items, upgrade materials, more potion, and tier 1 armor & weapon">
-            <div class="crate-count-icon">
-              <span class="crate-icon">📦</span>
-              <span class="crate-count" id="uncommon-count">99</span>
-            </div>
-            <span class="crate-span">Uncommon</span>
-          </div>
-          <div class="crate-button" id="rare-crate" title="Rare crate, contain rare upgrade materials, potion, and tier 2 armor & weapon">
-            <div class="crate-count-icon">
-              <span class="crate-icon">📦</span>
-              <span class="crate-count" id="rare-count">99</span>
-            </div>
-            <span class="crate-span">Rare</span>
-          </div>
-          <div class="crate-button" id="epic-crate" title="Only contain epic upgrade materials and tier 3 armor & weapon">
-            <div class="crate-count-icon">
-              <span class="crate-icon">📦</span>
-              <span class="crate-count" id="epic-count">99</span>
-            </div>
-            <span class="crate-span">Epic</span>
-          </div>
-          <div class="crate-button" id="unknown-crate" title="An unknown and unidentified crate gathered from nowhere, it can contain anything!
-Wish your luck!">
-            <div class="crate-count-icon">
-              <span class="crate-icon">📦</span>
-              <span class="crate-count" id="unknown-count">99</span>
-            </div>
-            <span class="crate-span">Unknown</span>
-          </div>
-        </div>
-      </div>
-      <div id="main"> </div>
     </document>
   </body>
-  <style>html, body {display: flex;margin: unset;padding: unset;box-sizing: border-box;flex-direction: column;}</style>
-  <script src="source/modified-live.js"></script>
+  <style>html, body {margin: unset;padding: unset;box-sizing: border-box;</style>
   <script src="script/script.js"></script>
-  <script src="asset/font/reg-font.js"></script>
-  <script>registerfont('asset/font', 'css');</script>
+  <script src="asset/font/reg-font.js"></script><script>registerfont('asset/font', 'css');</script>
+  <!-- Third party script -->
+  <script src="source/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="source/jquery-3.6.1.min.js"></script>
+  <!-- script src="source/m2-web/material-components-web.min.js"></script -->
+  <script src="source/modified-live.js"></script>
 </html>

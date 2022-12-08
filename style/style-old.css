@@ -1,0 +1,208 @@
+html, body {
+  --default-color: #6A1B9A;
+  background: var(--default-color);
+  font-family: Segoe UI Emoji, system-ui;
+  color: white;
+}
+
+#full {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  width: 860px;
+}
+
+@media (width < 860px) {
+  #full {
+    width: 100%;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#title {
+  color: cyan;
+  font-family: Trebuchet MS;
+  /* text-shadow: 2px 2px white; */
+  white-space: pre;
+}
+
+#subtitle {
+  color: white;
+  font-family: Consolas;
+  font-weight: bold;
+  margin: unset;
+}
+
+span#text {
+  color: orangered;
+}
+
+span#RPG {
+  color: orange;
+}
+
+span#minus {
+  color: yellow;
+}
+
+/****/
+#dashboard {
+  display: flex;
+  overflow: overlay;
+  margin: 16px;
+  padding: 0px 2px;
+  background: rgb(255 255 255 / 25%);
+  border-radius: 16px;
+  flex-direction: column;
+}
+
+#topboard {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+}
+
+#profile {
+  display: flex;
+  align-items: center;
+}
+
+#profile-img {
+  border-radius: 100%;
+}
+
+#profile-name {
+  font-family: tahoma;
+  font-size: 175%;
+  margin: 0px 16px;
+}
+
+#player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#player-top, #player-center, #player-bottom {
+  display: flex;
+}
+
+.indicator {
+  white-space: pre;
+  font-size: 10pt;
+  margin: 2px 0;
+}
+
+.indicator.equip {
+  width: 92px;
+}
+
+/***/
+#stats-list {display: flex;justify-content: space-between;padding: 16px;font-family: Trebuchet MS;}
+#rpg-stats {display: flex;font-family: Consolas;}
+.rpg-stats {display: flex;flex-direction: column;justify-content: space-around;}
+
+#equipment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/****/
+#inventory, #item, #pet, #crate {
+  display: flex;
+  border-radius: 16px;
+}
+
+#inventory {
+  margin: 0px 16px;
+  /* background: rgb(255 255 255 / 25%); */
+}
+
+#item, #pet, #crate, #console, #main{
+  display: flex;
+  /* margin: 16px; */
+  height: 256px;
+  width: 100%;
+  background: rgb(255 255 255 / 25%);
+  border: 2px solid transparent;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#item {
+  margin-right: 8px;
+}
+
+
+#item-text, #pet-text, #crate-text, #stats-text, #main-text, #console-text {
+  margin: unset;
+  padding: 8px 0px;
+  cursor: default;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  text-align: center;
+  background: #673ab7;
+}
+
+#pet {
+  margin-left: 8px;
+}
+
+/****/
+#crate {
+  margin: 16px;
+  height: unset;
+  width: unset;
+}
+
+#crate-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  overflow: overlay;
+}
+
+.crate-button {display: flex;flex-direction: column;align-items: center;cursor: pointer;margin: 0px 8px;}
+.crate-count-icon {display: flex;flex-direction: row-reverse;}
+.crate-icon {font-size: 48px;}
+
+.crate-count {
+  position: absolute;
+  padding: 4px;
+  width: 16px;
+  color: white;
+  text-align: center;
+  font-size: 10pt;
+  font-weight: bold;
+  box-shadow: 0px 0px 0px 1px white;
+  border-radius: 100%;
+}
+
+.crate-span {/* font-family: Trebuchet MS; */}
+#common-count {background: white;box-shadow: 0px 0px 0px 1px #9b9b9b;color: black;}
+#uncommon-count {background: #fcd53f;}
+#rare-count {background: #00d26a;}
+#epic-count {background: #8d65c5;}
+#unknown-count {background: black;}
+
+/****/
+#console, #main {
+  border-radius: 16px;
+  margin: 0 16px;
+  width: unset;
+}
+
+#console-log {
+  margin: unset;
+  padding: 16px;
+  height: 100%;
+  background: black;
+}
