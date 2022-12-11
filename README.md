@@ -34,7 +34,7 @@ Permissions of this strong copyleft license are conditioned on making available 
 - [Live.js](http://livejs.com/ "Live.js") - modified a little for better user experiences.
 - [jQuery](https://jquery.com/ "jQuery") 3.6.1 (minimal-compressed).
 - ~~[Bootstrap](https://getbootstrap.com/ "Bootstrap") 5.2.3 (all file are included in the source and backup directory).~~
-(I plan to not use bootstrap for now and focus on using Material Design as the main framework. The framework itself may still linked to the project though)
+(I plan to not use bootstrap for now and focus on using Material Design as the main framework. The framework itself may still linked to the project though).
 - [Google Material Design 2](https://m2.material.io/ "Google Material Design 2") web component.
 
 ##### Resource used on this Project:
