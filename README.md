@@ -29,7 +29,7 @@ This project using [GNU General Public License v3.0](https://github.com/coder-ne
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 
 ## 🚩Credits
-### Technology used on this project:
+#### Technology used on this project:
 - Basic and static web programming language ([HTML](https://wikipedia.org/wiki/HTML "Hypertext Markup Language"), [CSS](https://wikipedia.org/wiki/CSS "Cascading Style Sheet"), [Javascript](https://id.wikipedia.org/wiki/JavaScript "Javascript")).
 - [Live.js](http://livejs.com/ "Live.js") - modified a little for better user experiences.
 - [jQuery](https://jquery.com/ "jQuery") 3.6.1 (minimal-compressed).
@@ -37,6 +37,6 @@ Permissions of this strong copyleft license are conditioned on making available 
 (I plan to not use bootstrap for now and focus on using Material Design as the main framework. The framework itself may still linked to the project though).
 - [Google Material Design 2](https://m2.material.io/ "Google Material Design 2") web component.
 
-### Resource used on this Project:
+#### Resource used on this Project:
 - Font (Tahoma, Trebuchet MS, Consolas, Product Sans)
 - Most icon is gathered based on your system emoji font (I use emoji for icon instead of image), but for the logo/favicon (🍀) it's from Segoe UI Emoji font by Microsoft.
