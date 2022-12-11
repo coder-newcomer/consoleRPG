@@ -2,7 +2,7 @@
 An [RPG](https://wikipedia.org/wiki/RPG "Role-playing game (RPG)") Game made with [HTML](https://wikipedia.org/wiki/HTML "Hypertext Markup Language"), [CSS](https://wikipedia.org/wiki/CSS "Cascading Style Sheet"), [Javascript](https://id.wikipedia.org/wiki/JavaScript "Javascript"), and some web [framework](#technology-used-on-this-project "See below") for the GUI.
 
 ## 📄Description & Inpiration
-It is focused as casual RPG game on a web. What you need is just playing it like clicking button, managing item, creating, mining, foraging, fight, waiting, gacha, and/or do anything you can do inside the game.
+It's focused as casual RPG game on a web. What you need is just playing it like clicking button, managing item, creating, mining, foraging, fight, waiting, gacha, and/or do anything you can do inside the game.
 
 This game inspired from a [Whatsapp Bot](# "Source Needed!") RPG game and the original RPG game element. But because of limitations of my devices that cannot use any of game engine and my acknowledge, i try to bring it on web instead.
 
@@ -15,7 +15,7 @@ This game inspired from a [Whatsapp Bot](# "Source Needed!") RPG game and the or
 >I also planned to port the game to mobile in the future, but i still considering using a framework (like [Cordova](https://cordova.apache.org/)) or keep it on the web.
 
 ## ⚙️Installation & Setup
-Cause this project is still still in early development, all of feature mentioned above are *fake* for now (also concept maybe change later). But i planned that feature could be realize in the future.
+Cause this project is still in early development, all of feature mentioned above are *fake* for now (also concept maybe change later). But i planned that feature could be realize in the future.
 
 But if you want to try it earlier (prematurely maybe), just clone this repository and open `index.html` file in your browser.
 
