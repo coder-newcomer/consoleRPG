@@ -1,12 +1,27 @@
 html, body {
   /* height: 100%; */
   /* width: 100%; */
-  background: #673ab7 !important;
+  --emoji: "Apple Color Emoji","Noto Color Emoji","Segoe UI Emoji","Segoe UI Symbol", system-ui;
+  color: white !important;
+  background: #673ABB !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 #full {
   display: flex;
   flex-direction: column;
+  align-self: center;
+  width: 52em;
+}
+
+@media (width < 52em) {
+  #full {
+    width: 100%;
+  }
 }
 
 header {display: flex;flex-direction: column;align-items: center;padding: 8px;}
@@ -19,7 +34,7 @@ header {display: flex;flex-direction: column;align-items: center;padding: 8px;}
   text-decoration: none;
   font-family: Trebuchet MS;
   font-size: x-large;
-  /* font-weight: bold; */
+  font-weight: bold;
 }
 
 #subtitle {
@@ -27,3 +42,72 @@ header {display: flex;flex-direction: column;align-items: center;padding: 8px;}
   font-family: Consolas;
   align-self: center;
 }
+
+div {overflow: hidden;}
+div.main {display: flex;margin: 16px;cursor: default;flex-direction: column;}
+div.card {
+  background: rgb(255 255 255 / 25%);
+  border: 2px solid rgb(255 255 255 / 25%);
+  border-radius: 16px;
+}
+
+div.tools {margin-left: 16px;padding: 16px;}
+
+div.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 16px;
+}
+div.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 2px 8px;
+  background: rgb(103 58 187 / 50%);
+}
+
+.indicator {font-family: Product Sans, var(--emoji);font-size: 14px;}
+#userimg {height: 64px;border-radius: 100%;}
+
+.username {
+  display: flex;
+  align-items: center;
+}
+
+#username {
+  margin: 0px 16px;
+  font-family: Tahoma, var(--emoji);
+  font-size: 24px;
+}
+
+.owner {
+  display: flex;
+}
+
+.own {
+  display: flex;
+  flex-direction: column;
+}
+
+.own.left {
+  padding-right: 8px;
+}
+
+.infobar {
+  margin: unset;
+  padding: 4px 0px;
+  background: teal;
+  text-align: center;
+  font-family: Trebuchet MS;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.button {cursor: pointer;}
+.icon {
+  display: flex;
+  font-size: 32px;
+  flex-direction: row-reverse;
+}
+
+.subicon {position: absolute;font-size: 12px;}

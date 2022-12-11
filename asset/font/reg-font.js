@@ -1,3 +1,4 @@
+// Need some fix in the future
 var font = ['consola.ttf','ProductSans-Regular.ttf','tahoma.ttf','trebuc.ttf']
 var head = document.querySelector('head');
 var body = document.querySelector('body');

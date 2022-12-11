@@ -2,8 +2,27 @@ var time = 0;
 var now = Date().split(' ');
 var year = Date().split(' ')[3];
 var month = Date().split(' ')[1];
-var day = [Date().split(' ')[0],Date().split(' ')[2]]
+var day = [Date().split(' ')[0],Date().split(' ')[2]];
 var time = Date().split(' ')[4];
+
+function paramhandler() {
+  var parameter = location.href.toLowerCase().substr(location.href.indexOf('?') + 1,location.href.length).split('&');
+  //console.log(parameter);
+  if (parameter.includes('nom2')) {
+    document.getElementById('m2-style').remove();
+    document.getElementById('m2-script').remove();
+    console.log('Material 2 disabled on this page');
+  };
+  if (parameter.includes('nobs')) {
+    document.getElementById('bs-style').remove();
+    document.getElementById('bs-script').remove();
+    console.log('Bootstrap disabled on this page');
+  };
+    if (parameter.includes('nolive')) {
+    document.getElementById('live-script').remove();
+    console.log('Live.js disabled on this page');
+  };
+};
 
 function attentionwin7() {
   var win7 = 'Dear user\nThis page are using emoji as icon instead of an image. Since Windows 7 doesn\'t officially support emoji, so you may have a bad experience about it.\n\nWe also currently try to fix this issue by adding feature to use an image icon for Windows 7 user instead of emoji for better experience.\n\nSo for ya, stay tuned and we will present it for ya :)';
@@ -30,8 +49,14 @@ function doConsoleCleaner() {
     console.clear();
     console.info('This function will clearing the console log immediately after ' + interval + 'ms');
   },interval);
+}; if (document.location.protocol != "file:") {doConsoleCleaner();}
+
+function titlegenerator() {
+  const metadata = document.getElementById('metadata')
+  var title = metadata.getAttribute('title') + ' v' + metadata.getAttribute('version') + ' ' + metadata.getAttribute('channel') + ' - ' + metadata.getAttribute('description');
+  metadata.getAttribute('title')
+  document.querySelector('head').prepend(document.createElement('title'));
+  document.querySelector('head').querySelector('title').innerText = title;
 }
 
-if (document.location.protocol != "file:") {doConsoleCleaner();}
-attentionwin7();
-//console.log('Loaded!');
+attentionwin7();setTimeout(paramhandler, 750);
