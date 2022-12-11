@@ -20,6 +20,6 @@ Web interface intoduced as feature of this project, so this is the explanations 
  - #### Title
  It must be: `<emoji> <title> - <subtitle> <emoji>`
  - #### Clock and/or date viewer
- `EN: Date = Sunday, December 21th 2020 | Time = 11:36 AM/PM`
- `ID: Date = Senin, 13 April 2019 | Time = 18:16`
+ `EN:` `Date = Sunday, December 21th 2020 | Time = 11:36 AM/PM`
+ `ID:` `Date = Senin, 13 April 2019 | Time = 18:16`
 - ### Main
