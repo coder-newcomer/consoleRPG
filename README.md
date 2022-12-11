@@ -38,5 +38,5 @@ Permissions of this strong copyleft license are conditioned on making available 
 - [Google Material Design 2](https://m2.material.io/ "Google Material Design 2") web component.
 
 #### Resource used on this Project:
-- Font (Tahoma, Trebuchet MS, Consolas, Product Sans)
-- Most icon is gathered based on your system emoji font (I use emoji for icon instead of image), but for the logo/favicon (🍀) it's from Segoe UI Emoji font by Microsoft.
+- Font (Tahoma, Trebuchet MS, Consolas, Product Sans) - **I will change this**
+- Most icon is gathered based on your system emoji font (I use emoji for icon instead of image), but for the logo/favicon (🍀) it's from [Segoe UI Emoji font by Microsoft](https://learn.microsoft.com/en-us/typography/font-list/segoe-ui-emoji). (I don't know it is legal or not, but i think i need an alternative logo)
