@@ -1,0 +1,98 @@
+body {
+  color: white;
+}
+
+window {
+  display: flex;
+  overflow: hidden;
+  margin: 16px;
+  height: 100%;
+  background: black;
+  outline: 1px solid #3f51b5;
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+titled {
+  display: flex;
+  background: #3f51b5;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  display: flex;
+  margin: 6px;
+  font-family: system-ui;
+  align-items: center;
+}
+
+pre {
+  display: flex;
+  margin: unset;
+  padding: 12px;
+  height: 100%;
+  flex-direction: column-reverse;
+  overflow: overlay;
+}
+
+span {
+  padding: 2px 16px;
+  transform: translateY(24px);
+  transition: 1s cubic-bezier(0, 0, 0, 1);
+}
+
+footer {
+  display: flex;
+  padding: 16px;
+  padding-top: unset;
+}
+
+input {
+  padding: 12px;
+  border: 2px solid #3F51B5;
+  border-radius: 12px;
+  outline: none;
+  font-size: 10pt;
+  font-family: monospace;
+  width: 100%;
+}
+
+button:focus {outline: none;} button:active{background: #283593;}
+input:hover, button:hover, button:focus, window:hover {box-shadow: 0 0 8px grey;}
+
+@keyframes visited {
+  from {box-shadow: 0 0 8px grey;}
+  to {  box-shadow: none;}
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  background: #3F51B5;
+  border: none;
+  border-radius: 128px;
+  margin-left: 12px;
+  width: 45px;
+  text-align: center;
+  font-family: Segoe Fluent Icons;
+}
+
+#exit {
+  cursor: default;
+  border-bottom: 1px solid #3f51b5;
+  border-radius: unset;
+  font-size: 15px;
+  transition: unset;
+  height: 100%;
+}
+
+#exit:hover, #exit:active {box-shadow: unset;background: #c42b1c;}
+#exit:focus{box-shadow: unset;}
+
+.title {
+  margin: unset;
+  padding: unset;
+  font-size: 9pt;
+  transform: none;
+}

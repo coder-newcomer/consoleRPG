@@ -2,13 +2,25 @@
 <html>
   <head>
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/error.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="error.css">
     <meta charset="utf-8">
     <title>consoleRPG - play RPG game on console</title>
   </head>
   <body>
     <document id="main" style="display: none;height: 100%;">
+      <window>
+        <titled>
+          <p><span class="title">🖥️ Console</span></p>
+          <button id="exit" title="Close"></button>
+        </titled>
+        <pre>
+        </pre>
+        <footer>
+          <input type="text" placeholder="Input command">
+          <button title="Send"></button>
+        </footer>
+      </window>
     </document>
     <noscript>
       <document class="full">
@@ -40,7 +52,7 @@
   document.getElementById('noscript').remove();
   //self-remove
     </script>
-  <script src="source/modified-live.js"></script>
-  <script src="script/script.js"></script>
-  <script src="script/consoleRPG-ported.js"></script>
+  <script src="../source/modified-live.js"></script>
+  <script src="script.js"></script>
+  <script src="consoleRPG-ported.js"></script>
 </html>

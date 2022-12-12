@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <meta id="metadata" author="coder-newcomer" title="consoleRPG" description="play RPG game on console" version="0.0192" channel="alpha">
+    <!-- Third party link -->
+    <link id="bs-style" rel="stylesheet" href="source/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link id="m2-style" rel="stylesheet" href="source/m2-web/material-components-web.min.css">
+  </head>
+  <body>
+    <document id="full">
+      <header>
+        <a href id="title">🎮🕹️<span class="t1">console</span><span class="t2">RPG</span><span class="t3"> - </span>Let's play!🕹️🎮</a>
+        <b id="subtitle"></b>
+      </header>
+      <div class="main">
+        <div class="card dashboard">
+          <div class="profile">
+            <div class="username">
+              <img id="userimg" src="asset/DefaultAccountTile.png">
+              <p id="username">akungamesukasuka 🎮</p>
+            </div>
+            <div class="owner">
+              <div class="own left">
+                <span class="indicator" id="rank" title="Rank">⚜️ Mythic</span>
+                <span class="indicator" id="level" title="Level">🏅 60</span>
+                <span class="indicator" id="xp" title="XP">✨ 9999999</span>
+              </div>
+              <div class="own right">
+                <span class="indicator" id="hp" title="HP">♥️ 5000/5000</span>
+                <span class="indicator" id="energy" title="Energy">🔋 500/500</span>
+                <span class="indicator" id="money" title="Money">💵 9999999</span>
+              </div>
+            </div>
+          </div>
+          <div class="stats">
+            <span class="indicator stats" id="atk" title="Basic attack damage given to the target">🔪 8238</span>
+            <span class="indicator stats" id="def" title="Defense will decrease attack given to player">🛡️ 622</span>
+            <span class="indicator stats" id="spd" title="Basic speed movement for walk/moving or avoid attacks">👟 325</span>
+            <span class="indicator stats" id="crt" title="Additional given damage when successfully doing combo
+It's called critical">💥 23%</span>
+            <span class="indicator stats" id="luk" title="Your luck, only applies to everything that relies on luck or randomness
+Doesn't applied on fight and not guaranteed 100%">🍀 28%</span>
+          </div>
+        </div>
+        <div class="card equipment">
+          <b id="equipment">🛠️ EQUIPMENT</b>
+        </div>
+      </div>
+    </document>
+  </body>
+  <style>html, body {margin: unset;padding: unset;box-sizing: border-box;</style>
+  <script src="script/script.js"></script>
+  <script>titlegenerator()</script>
+  <!-- Third party script -->
+  <script id="bs-script" src="source/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="source/jquery-3.6.1.min.js"></script>
+  <script id="m2-script" src="source/m2-web/material-components-web.min.js"></script>
+  <script id="live-script" src="source/modified-live.js"></script>
+</html>

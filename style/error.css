@@ -1,0 +1,60 @@
+html, body {
+  margin: unset;
+  padding: unset;
+  height: 100%;
+  background: white;
+  font-family: Trebuchet MS, system-ui;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+document.full {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  animation: 1.5s linear faded;
+}
+
+div.full {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 86%;
+}
+
+.code {
+  font-family: Consolas, monospace;
+  font-size: xxx-large;
+}
+
+.info {
+  margin: unset;
+  color: #da3633;
+  font-family: Tahoma;
+}
+
+.reason {
+  color: black;
+}
+
+.advice {
+  color: grey;
+  font-family: system-ui;
+  font-size: 12px;
+  margin: unset;
+}
+
+@keyframes faded {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}

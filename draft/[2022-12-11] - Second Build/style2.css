@@ -1,9 +1,11 @@
 html, body {
   /* height: 100%; */
   /* width: 100%; */
-  --emoji: "Apple Color Emoji","Noto Color Emoji","Segoe UI Emoji","Segoe UI Symbol", system-ui;
+  --emoji:
+  "Apple Color Emoji","Noto Color Emoji","Segoe UI Emoji","Segoe UI Symbol", system-ui;
   color: white !important;
   background: #673ABB !important;
+  font-family: Noto Sans;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
   }
 }
 
-header {display: flex;flex-direction: column;align-items: center;padding: 8px;}
+header {display: flex;flex-direction: column;align-items: center;padding: 0px 8px;}
 .t1 {color: orangered;}
 .t2 {color: orange}
 .t3 {color: yellow;}
@@ -35,6 +37,7 @@ header {display: flex;flex-direction: column;align-items: center;padding: 8px;}
   font-family: Trebuchet MS;
   font-size: x-large;
   font-weight: bold;
+  margin: 16px 0;
 }
 
 #subtitle {
