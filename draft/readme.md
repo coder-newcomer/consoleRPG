@@ -11,15 +11,15 @@ If you want, you can take a look at the concept map and how the project will loo
 - [ ] Finish this work and release
 
 # 🗺️Development & Concept Map
-- [❓What is this?](#-what-is-this-)
-- [📋TODO & TOFIX](#--todo---tofix)
-- [🗺️Development & Concept Map](#---development---concept-map)
-  * [📱Interface](#--interface)
+- [❓What is this?](#what-is-this-)
+- [📋TODO & TOFIX](#todo-tofix)
+- [🗺️Development & Concept Map](#-development-concept-map)
+  * [📱Interface](#interface)
     + [Header](#header)
       - [Title](#title)
       - [Clock and/or date viewer](#clock-and-or-date-viewer)
     + [Main](#main)
-  * [🕓Development Logs](#--development-logs)
+  * [🕓Development Logs](#development-logs)
 
 ## 📱Interface
 > Broken
@@ -35,7 +35,7 @@ Web interface intoduced as feature of this project, so this is the explanations 
 
 ## 🕓Development Logs
 | Date | Build Name | Description | Status | Part of Project
-| :--: | -- | -- | :--: | :--:
+| :--: | -- | -- | :--: | --
 | `2022-12-8` | First build | First concept and build of the project | Deprecated | -
 | `2022-12-11` | Second build | Second concept and build | Deprecated | As `sample`
 | `2022-12-22` | console-build | Another concept and idea to be applied on the project | Half-developed | As `ideas`
