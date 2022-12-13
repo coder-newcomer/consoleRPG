@@ -10,7 +10,7 @@ Note: This project is still in early development. Very not work for now!
 
 ## 💠Upcoming Feature & Concept
  Job you can do
-- This section is unavailable because the developer are being busy doing another job, Please.
+- This section is unavailable because the developer are being so busy doing another job, Please.
 
 >I also planned to port the game to mobile in the future, but i still considering using a framework (like [Cordova](https://cordova.apache.org/)) or keep it on the web.
 
@@ -38,5 +38,10 @@ Permissions of this strong copyleft license are conditioned on making available 
 - [Google Material Design 2](https://m2.material.io/ "Google Material Design 2") web component.
 
 #### Resource used on this Project:
-- Font (Tahoma, Trebuchet MS, Consolas, Product Sans) - **I will change this**
-- Most icon is gathered based on your system emoji font (I use emoji for icon instead of image), but for the logo/favicon (🍀) it's from [Segoe UI Emoji font by Microsoft](https://learn.microsoft.com/en-us/typography/font-list/segoe-ui-emoji). (I don't know it is legal or not, but i think i need an alternative logo)
+- Font used in this project:
+ - **Monospace/Fixed-width:** Consolas (Windows), Noto Sans Mono, your system *monospace* font.
+ - **Neutral/UI:** Segoe UI (Windows), Noto Sans, your *system-ui* font.
+ - **Serif:** Noto Serif, Times New Roman (as Fallback), your system *serif* font.
+- Most icon is gathered based on **your system emoji font** (I use emoji for icon instead of image).
+- The logo/favicon is created by **AI** (Dream by WOMBO) with command "f logo", you may want to try it yourself about **[AI Image Generator](http://google.com/search?q=AI+Image+Generator)**.
+ - Its actually the only *cool* logo that i have created with, may i need another logo.
