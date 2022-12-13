@@ -11,8 +11,15 @@ If you want, you can take a look at the concept map and how the project will loo
 - [ ] Finish this work and release
 
 # 🗺️Development & Concept Map
-
-[TOC]
+- [❓What is this?](#-what-is-this-)
+- [📋TODO & TOFIX](#--todo---tofix)
+- [🗺️Development & Concept Map](#---development---concept-map)
+  * [📱Interface](#--interface)
+    + [Header](#header)
+      - [Title](#title)
+      - [Clock and/or date viewer](#clock-and-or-date-viewer)
+    + [Main](#main)
+  * [🕓Development Logs](#--development-logs)
 
 ## 📱Interface
 > Broken
