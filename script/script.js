@@ -1,4 +1,4 @@
-document.getElementById('exit').onclick = function () {close()};
+//document.getElementById('exit').onclick = function () {close()};
 
 function sendmsg(text) {
   var pre = document.querySelector('pre');
