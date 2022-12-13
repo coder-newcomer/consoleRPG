@@ -1,7 +1,49 @@
+@font-face {
+  font-family: Segoe Fluent Icons;
+  src: url('../asset/font/SegoeIcons.ttf');
+} /* font-point */
 
+:root {
+  --icons: Segoe Fluent Icons;
+  --accent: #3F51B5;
+}
+
+div {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  border-bottom: 1px solid var(--accent);
+  background: var(--accent);
+  font-size: 9pt;
+  font-family: system-ui;
+  white-space: pre;
+}
+
+.title {
+    margin: 6px;
+}
 
 window {
   height: 100%;
+  width: 100%;
+  overflow: hidden;
   background: #FFEB3B;
+  border: 1px solid var(--accent);
   border-radius: 12px;
 }
+
+#x-main {
+  color: white;
+  background: none;
+  border: none;
+  font-family: var(--icons);
+  font-size: 12pt;
+}
+
+#x-main

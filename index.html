@@ -9,14 +9,18 @@
   </head>
   <body>
     <document id="main" style="display: none;height: 100%;">
-      <window id="console">
-        <header class="window">
-          <span class="title">🖥️ Console</span>
-          <button class="x-btn" id="x-main"></button>
-        </header>
-        <main id="msg"></main>
-        <footer id="msg-placeholder"></footer>
-      </window>
+      <div class="left"></div>
+      <div class="center">
+        <window id="console">
+          <header class="window">
+            <span class="title"> 🖥️ Console</span>
+            <button class="x-btn" id="x-main"></button>
+          </header>
+          <main id="msg"></main>
+          <footer id="msg-placeholder"></footer>
+        </window>
+      </div>
+      <div class="right"></div>
     </document>
     <noscript>
       <document class="full">
@@ -44,7 +48,6 @@
   //document.querySelector('title').textContent = 'Konversi Bilangan v1.4.6 beta | bugfix in progress';
   document.querySelector('noscript').remove();
   document.getElementById('main').style.display = "flex";
-  document.getElementById('main').style.flexDirection = "column";
   document.getElementById('noscript').remove();
   //self-remove
     </script>
