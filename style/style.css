@@ -4,6 +4,7 @@
 } /* font-point */
 
 :root {
+  --demo: none;
   --icons: Segoe Fluent Icons;
   --size: 6px;
   --bezier1: cubic-bezier(0.5, 0, 0, 1);
@@ -14,6 +15,7 @@
 
 .place {
   display: flex;
+  color: white;
   padding: calc(var(--size)*3);
   height: 100%;
   width: 100%;
@@ -22,7 +24,6 @@
 header {
   display: flex;
   justify-content: space-between;
-  color: white;
   border-bottom: 1px solid var(--accent);
   background: var(--accent);
   font-size: 9pt;
@@ -69,9 +70,12 @@ window:hover {
 
 #msg {
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
+  flex-direction: column;
+  margin: 0 calc(var(--size)*3);
   height: 100%;
+  justify-content: flex-end;
+  font-family: Consolas, monospace, Noto Sans Mono;
+  font-size: 10pt;
 }
 
 #msg-place {
@@ -110,3 +114,6 @@ window:hover {
 
 #msg-send:focus {outline: none;}
 #msg-send:active {transition: 0.15s var(--bezier1);background: var(--accent-dark);}
+.demo {display: var(--demo);}
+.send.icon {color: #00ffff;}
+.get.icon {color: #ffff00;}
