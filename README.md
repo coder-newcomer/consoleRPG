@@ -4,7 +4,7 @@ An [RPG](https://wikipedia.org/wiki/RPG "Role-playing game (RPG)") Game made wit
 ## 📄Description & Inspiration
 It's focused as casual RPG game on a web. What you need is just playing it like clicking button, managing item, creating, mining, foraging, fight, waiting, gacha, and/or do anything you can do inside the game.
 
-This game inspired from a [Whatsapp Bot](# "Source Needed!") RPG game and the original RPG game element. But because of limitations of my devices that cannot use any of game engine and my acknowledge, i try to bring it on web instead.
+This game inspired from a [Whatsapp Bot](# "Source Needed!") RPG game and the original RPG game element. But because of limitations of my devices that cannot use any of game engine and my acknowledge, i try to bring it on web (console) instead.
 
 Note: This project is still in early development. Very not work for now!
 

@@ -9,18 +9,22 @@
   </head>
   <body>
     <document id="main" style="display: none;height: 100%;">
-      <div class="left"></div>
-      <div class="center">
+      <div class="place left"></div>
+      <div class="place center">
         <window id="console">
           <header class="window">
             <span class="title"> 🖥️ Console</span>
-            <button class="x-btn" id="x-main"></button>
+            <button class="x-btn" id="x-main" title="Close"></button>
           </header>
-          <main id="msg"></main>
-          <footer id="msg-placeholder"></footer>
+          <pre id="msg">
+          </pre>
+          <footer id="msg-place">
+            <input type="text" id="msg-input" placeholder="Input command">
+            <button id="msg-send" title="Send"></button>
+          </footer>
         </window>
       </div>
-      <div class="right"></div>
+      <div class="place right"></div>
     </document>
     <noscript>
       <document class="full">
