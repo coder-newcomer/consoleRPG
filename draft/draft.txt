@@ -21,3 +21,6 @@ Kisah Roger Sumatra dan Katak Acumalaka
 💥 CRT: 23%
 💪🏻 POW: 38%
 🍀 LUK: 28%
+
+Unlisted TODO:
+- [ ] Fix the send and get span icon 

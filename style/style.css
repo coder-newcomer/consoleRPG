@@ -6,6 +6,7 @@
 :root {
   --demo: none;
   --icons: Segoe Fluent Icons;
+  --monospace: Consolas, monospace, Noto Sans Mono;
   --size: 6px;
   --bezier1: cubic-bezier(0.5, 0, 0, 1);
   --bezier2: cubic-bezier(0, 0, 0, 1);
@@ -38,14 +39,12 @@ header {
 window {
   display: flex;
   height: 100%;
-  width: 100%;
   overflow: hidden;
   background: black;
   border: 1px solid var(--accent);
   border-radius: calc(var(--size)*2);
   transition: 1s var(--bezier1);
   flex-direction: column;
-  justify-content: space-between;
 }
 
 window:hover {
@@ -70,11 +69,12 @@ window:hover {
 
 #msg {
   display: flex;
-  flex-direction: column;
-  margin: 0 calc(var(--size)*3);
+  flex-direction: column-reverse;
+  overflow: auto;
+  margin: unset;
+  padding: 0 calc(var(--size)*3);
   height: 100%;
-  justify-content: flex-end;
-  font-family: Consolas, monospace, Noto Sans Mono;
+  font-family: var(--monospace);
   font-size: 10pt;
 }
 
@@ -91,7 +91,7 @@ window:hover {
   outline: none;
   border: calc(var(--size)/3) solid grey;
   border-radius: calc(var(--size)*1.5);
-  font-family: Consolas, monospace, Noto Sans Mono;
+  font-family: var(--monomonospace);
   font-size: 10pt;
   transition: 1s var(--bezier1);
 }
@@ -106,14 +106,17 @@ window:hover {
   border: none;
   border-radius: calc(var(--size)*2);
   text-align: center;
+  padding: calc(var(--size)*2);
   margin-left: var(--size);
   height: 100%;
-  width: 2.85em;
   transition: 1s var(--bezier1);
 }
 
 #msg-send:focus {outline: none;}
 #msg-send:active {transition: 0.15s var(--bezier1);background: var(--accent-dark);}
 .demo {display: var(--demo);}
+.send {display: flex;border-bottom: 1px solid rgb(255 255 255 / 12.5%);background: rgb(255 255 255 / 25%);}
 .send.icon {color: #00ffff;}
+.get {/* display: flex; */border-bottom: 1px solid rgb(255 255 255 / 12.5%);background: rgb(255 255 255 / 12.5%);white-space: pre;}
 .get.icon {color: #ffff00;}
+.send.icon, .get.icon {padding: 0 calc(var(--size)/2);}
