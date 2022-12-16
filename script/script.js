@@ -1,21 +1,23 @@
 //document.getElementById('exit').onclick = function () {close()};
+var zygote = {
+  getParam: function () {
+    if (location.href.indexOf('?') != -1) {
+      return location.href.substr(location.href.indexOf('?') + 1, location.href.length).split('&');
+    };
+  }
+};var z = zygote;
 
-function getparam() {
-  if (location.href.indexOf('?') != -1) {
-    return location.href.substr(location.href.indexOf('?') + 1, location.href.length).split('&');
-  };
-};
-
-if (getparam() != undefined) {
-  if (getparam().includes('debug')) {
+if (zygote.getParam() != undefined) {
+  if (zygote.getParam().includes('debug')) {
     document.querySelector('body').append(document.createElement('script'));
     document.querySelector('body').querySelectorAll('script')[document.querySelector('body').querySelectorAll('script').length - 1].src = 'script/debug.js';
   };
-  if (getparam().includes('useFont')) {
+  if (zygote.getParam().includes('useFont')) {
     
   };
 };
 
+/*
 function sendmsg(text, withicon) {
   var msg = document.getElementById('msg');
   msg.prepend(document.createElement('span'));
@@ -35,3 +37,4 @@ function getmsg(text, withicon) {
   if (withicon) {icon = icon.replaceAll('  ','<-');};
   span.innerHTML = icon + text;;
 };
+*/

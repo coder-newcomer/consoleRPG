@@ -1,7 +1,7 @@
-# ❔About this place
+# ❔ About this place
 This is archive. In short, a place for where the remnants of files or folders from development have been. Its contain build versions, some old files, and development logs.
 
-## 🕓Development Logs
+## 🕓 Development Logs
 | Date | Build Name | Description | Status | Part of Project
 | :--: | -- | -- | :--: | --
 | `2022-12-8` | First build | First concept and build of the project | Deprecated | -
