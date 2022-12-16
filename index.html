@@ -14,12 +14,11 @@
       <div class="place center">
         <window id="console">
           <header class="window">
-            <span class="title"> 🖥️ Console</span>
+            <span class="title">🖥️ Console</span>
             <button class="x-btn" id="x-main" title="Close"></button>
           </header>
           <pre id="msg">
-            <span class="send demo"><span class="send icon">-&gt</span> Send command will look like this</span>
-            <span class="get demo"><span class="get icon">&lt-</span> Get command will look like this</span>
+            <line><span class="msg-icon"></span><span class="msg-text"></span></line>
           </pre>
           <footer id="msg-place">
             <input type="text" id="msg-input" placeholder="Input command">
@@ -57,7 +56,7 @@
   document.getElementById('main').style.display = "flex";
   document.getElementById('noscript').remove();
   //self-remove
-    </script>
+  </script>
   <script src="source/modified-live.js"></script>
   <script src="script/script.js"></script>
   <script src="script/consoleRPG-ported.js"></script>
