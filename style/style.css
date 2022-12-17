@@ -6,10 +6,10 @@
 :root {
   --demo: none;
   --icons: Segoe Fluent Icons;
-  --emoji: Apple Color Emoji, Noto Color Emoji, Segoe UI Emoji, Segoe UI Symbol, system-ui;
+  --emoji: Apple Color Emoji, Noto Color Emoji, Segoe UI Emoji, emoji, Segoe UI Symbol, system-ui;
   --monospace: Consolas, monospace, Noto Sans Mono, var(--emoji);
   --size: 6px;
-  --bezier1: cubic-bezier(0.5, 0, 0, 1);
+  --bezier1:cubic-bezier(0.5, 0, 0, 1);
   --bezier2: cubic-bezier(0, 0, 0, 1);
   --accent: #3F51B5;
   --accent-dark: #303F9F;
@@ -30,13 +30,13 @@ header {
   background: var(--accent);
   font-size: 9pt;
   font-family: system-ui;
+  user-select: none;
   white-space: pre;
 }
 
 .title {
   margin: var(--size);
 }
-
 window {
   display: flex;
   height: 100%;
@@ -44,18 +44,17 @@ window {
   background: black;
   border: 1px solid var(--accent);
   border-radius: calc(var(--size)*2);
-  transition: 3s var(--bezier1);
+  transition: 1s var(--bezier1);
   flex-direction: column;
 }
-
 window:hover {
   box-shadow: 0 0 var(--size) grey;
 }
 
+button {user-select:none;}
 #x-main, #msg-send {
   font-family: var(--icons);
 }
-
 #x-main {
   color: white;
   background: none;
@@ -63,7 +62,6 @@ window:hover {
   font-size: 11pt;
   width: calc(var(--size)*5);
 }
-
 #x-main:hover {
   background: rgb(255 0 0 / 75%);
 }
@@ -78,14 +76,12 @@ window:hover {
   font-family: var(--monospace);
   font-size: 10pt;
 }
-
 #msg-place {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: calc(var(--size)*2);
 }
-
 #msg-input {
   width: 100%;
   padding: calc(var(--size)*1.5);
@@ -96,10 +92,10 @@ window:hover {
   font-size: 10pt;
   transition: 1s var(--bezier1);
 }
-
-#msg-input:hover, #msg-send:hover, #msg-send:focus {box-shadow: 0 0 var(--size) lightgrey;}
+#msg-input:hover, #msg-send:hover, #msg-send:focus {
+  box-shadow: 0 0 var(--size) lightgrey;
+}
 #msg-input:focus {border: calc(var(--size)/3) solid var(--accent);}
-
 #msg-send {
   cursor: pointer;
   color: white;
@@ -112,6 +108,13 @@ window:hover {
   height: 100%;
   transition: 1s var(--bezier1);
 }
-
 #msg-send:focus {outline: none;}
-#msg-send:active {transition: 0.15s var(--bezier1);background: var(--accent-dark);}
+#msg-send:active {
+  transition: 0.15s var(--bezier1);
+  background: var(--accent-dark);
+}
+
+.demo {display: var(--demo);}
+.line {/* display: flex; */}
+.msg-icon {white-space: pre;}
+.error, .warn, .info {font-family: var(--emoji);}

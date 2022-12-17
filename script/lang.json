@@ -1,0 +1,12 @@
+{
+	"console": {
+		"title": {
+			"id": "Konsol",
+		"en": "Console"
+		},
+	"xbtn": {
+		"id": "Tutup",
+		"en": "Close"
+		}
+	}
+}
