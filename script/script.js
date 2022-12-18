@@ -1,4 +1,5 @@
 //document.getElementById('exit').onclick = function () {close()};
+//import * from '/modules/jquery-3.6.1.min.js';
 var z = {
   getParam: function () {
     if (location.href.indexOf('?') != -1) {
@@ -16,4 +17,5 @@ if (z.getParam() != undefined) {
   };
 };
 
-// some function on this script now lony work with jQuery
+// some function on this script now only work with jQuery
+$('.x-btn').click(function() {close()});

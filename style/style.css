@@ -68,12 +68,14 @@ button {user-select:none;}
 
 #msg {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   overflow: auto;
   margin: unset;
   padding: 0 calc(var(--size)*3);
+  padding-top: calc(var(--size)*2);
   height: 100%;
-  font-family: var(--monospace);
+  font-family:
+  var(--monospace);
   font-size: 10pt;
 }
 #msg-place {
@@ -116,5 +118,8 @@ button {user-select:none;}
 
 .demo {display: var(--demo);}
 .line {/* display: flex; */}
-.msg-icon {white-space: pre;}
+.msg-icon {cursor: help;white-space: pre;}
 .error, .warn, .info {font-family: var(--emoji);}
+.send {
+  
+}
