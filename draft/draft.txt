@@ -22,5 +22,5 @@ Kisah Roger Sumatra dan Katak Acumalaka
 💪🏻 POW: 38%
 🍀 LUK: 28%
 
-Unlisted TODO:
-- [ ] Fix the send and get span icon 
+<div class="line"><span class="msg-icon %type%">%icon%</span><span class="msg-text %send%">%text%</span></div>
+- Need animation support

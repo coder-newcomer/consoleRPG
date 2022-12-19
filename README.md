@@ -24,7 +24,7 @@ But if you want to try it earlier (prematurely maybe), just clone this repositor
 You can also hosting it whatever you want. Or try the [GitHub page](https://coder-newcomer.github.io/consoleRPG/) one instead.
 
 ## 📜 License
-This project using [GNU General Public License v3.0](https://github.com/coder-newcomer/consoleRPG/blob/main/LICENSE "GNU General Public License v3.0")
+This project using [GNU General Public License v3.0](blob/main/LICENSE "GNU General Public License v3.0")
 
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 

@@ -4,7 +4,6 @@
 } /* font-point */
 
 :root {
-  --demo: none;
   --icons: Segoe Fluent Icons;
   --emoji: Apple Color Emoji, Noto Color Emoji, Segoe UI Emoji, emoji, Segoe UI Symbol, system-ui;
   --monospace: Consolas, monospace, Noto Sans Mono, var(--emoji);
@@ -116,10 +115,12 @@ button {user-select:none;}
   background: var(--accent-dark);
 }
 
-.demo {display: var(--demo);}
-.line {/* display: flex; */}
-.msg-icon {cursor: help;white-space: pre;}
-.error, .warn, .info {font-family: var(--emoji);}
-.send {
-  
-}
+.msg-text {/* padding: calc(var(--size)/3); */padding-left: var(--size);white-space: pre;width: 100%;}
+.line {display: flex;align-items: center;}
+.demo{display: none;}
+.msg-icon {align-self: flex-start;cursor: help;padding: 0 calc(var(--size)/3);white-space: pre;}
+.msg-icon.error, .msg-icon.warn, .msg-icon.info {font-family: var(--emoji);}
+.msg-icon.send {color: lime;}
+.get {background: rgb(255 255 255 / 15%);}
+.msg-icon.get {color: yellow;background: rgb(255 255 255 / 25%);}
+.msg-icon.info{}
