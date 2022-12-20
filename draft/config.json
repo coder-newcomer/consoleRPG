@@ -1,0 +1,9 @@
+{
+  "user": {
+    "name": "admin",
+    "password": "admin",
+    "level": "99",
+    "xp": "9999999",
+    "money": "9999999"
+  }
+}
