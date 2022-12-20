@@ -8,6 +8,7 @@ If you want, you can take a look at the concept map and how the project will loo
 # 📋TODO & TOFIX
 - [ ] Find alternative font that have **Commercial Use** license rights
 - [ ] Find alternative logo of 4 leaf clover
+- [ ] Add animation support for the gui
 - [ ] Finish this work and release
 
 # 🗺️Development & Concept Map
