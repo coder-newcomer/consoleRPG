@@ -7,10 +7,10 @@
  
 #### 2022-12-19
 ---
-- Now using jQuery.
+- Now using [jQuery](https://jquery.com/).
 - Console window and the function have been created.
  - Currently supported message type: [send, get, info, warn, error] and plain in another function.
-- Now developer decided to focusing on the main script of the game (consoleRPG.js) for future development and neglected the web gui for a while.
+- Now developer decided to focusing on the main script of the game (consoleRPG.js) for future development and neglected the web gui for an unpredictable time.
 
 #### 2022-12-20
 ---
