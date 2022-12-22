@@ -14,17 +14,18 @@ var game = {
       }
     },
     parse: function (stringid, langid) { // language parse function for multi-language support
-      var err = 'The specified stringid object doesn\'t have a valid translation on it\'s own constructor following the specified langid value. Make sure you specify the right langid value or the specified stringid doesn\'t have the right translation that match with the specified langid value.';
       var lang = JSON.stringify(stringid).replaceAll('{"','').replaceAll('"}', '').replaceAll('","', '":"').split('":"');
       // Error handler
+      var err = 'The specified stringid object doesn\'t have a valid translation on it\'s own constructor following the specified langid value. Make sure you specify the right langid value or the specified stringid doesn\'t have the right translation that match with the specified langid value.';
+      var condition = [!JSON.stringify(stringid).includes('"langid":'.replaceAll('langid', langid)), lang.indexOf(langid) < 0]; // Two types of error condition checking [0, 1]
       if (typeof stringid != 'object') {throw new TypeError('Specified stringid must be an valid language object! "%error" is\'nt an object!'.replaceAll('%error', stringid));} // Specified stringid must be an object
       else if (!JSON.stringify(stringid).includes('"en":')) {throw new TypeError('Specified stringid is invalid language object!')} // Validate the stringid object constructor if they have at least one default translation langid (en = English)
       else if (langid.length > 2 || typeof langid != 'string') {throw new TypeError('Unknown specified langid value!');} // Currently the valid langid value is 2 digit string following in the format defined in RFC 5646: Tags for Identifying Languages (also known as BCP 47)
-      else if (!JSON.stringify(stringid).includes('"langid":'.replaceAll('langid', langid))) {throw new Error(err);} // This error handler is unexpected sometimes, use try catch i think
+      else if (condition[1]) {throw new Error(err);} // This error handler is unexpected sometimes, use try catch i think
       else {return lang[lang.indexOf(langid) + 1];}
     },
     // Translation goes here
-    // Currently supported language: [en = english, id = Indonesia]
+    // Currently supported language: [en = English, id = Indonesia]
     "registered": {
       "en": "Registered",
       "id": "Terdaftar"
@@ -33,6 +34,7 @@ var game = {
       "en": "Something wrong!",
       "id": "Ada sesuatu yang salah!"
     }
+    // End here
   },
   profile: {
     register: function(username, password, nickname) {
@@ -60,7 +62,7 @@ var game = {
       if (localStorage.getItem('user: ' + username) == null) {return console.error('Username not available!');};
       // Getting value and start verifying
       var json = JSON.parse(localStorage.getItem('user: ' + username));
-      if (password == null) {return console.error('Input password!')}; // Need to add exception when username has no password
+      //if (password == null) {return console.error('Input password!')}; // Need to add exception when username has no password
       if (password == json.user.password) {
         localStorage.currentuser = username;
         if (localStorage.currentuser == username) {
