@@ -30,7 +30,7 @@
 ---
 - Some code cleanup.
 - Comment *fix* if it's necessary.
-- Language and Translation data splitted up from the code to it's own file (for better translation support).
+- Language and Translation data splitted up from the main code file to it's own file (for better translation support).
   - The default stringid may change later.
 - Fix the language format parser function error handler thrown types.
   - Some error handler may buggy and/or not working at all.
