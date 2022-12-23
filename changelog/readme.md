@@ -17,11 +17,20 @@
 ---
 - Basic Register, Login, and Logout method have been implemented, but still incomplete in some aspect, and maybe need to cleanup the code.
 
-#### 2022-12-23
+#### 2022-12-22
 ---
-- Comment for simple explanation in some codeplace.
+- Comment for simple explanation in some codeplace. Continuesly
 - Added predefined support for multi-language (Currently supported: [id, en]).
   - Translation format and example have been created (see inside the code).
-  - Language format parser function for future multi-language development support
-   - Including error handler (sometime work unexpectedly)
+  - Language format parser function for future multi-language development support.
+   - Including error handler (sometime work unexpectedly).
   - Coming soon feature!
+
+#### 2022-12-23
+---
+- Some code cleanup.
+- Comment *fix* if it's necessary.
+- Language and Translation data splitted up from the code to it's own file (for better translation support).
+  - The default stringid may change later.
+- Fix the language format parser function error handler thrown types.
+  - Some error handler may buggy and/or not working at all.
