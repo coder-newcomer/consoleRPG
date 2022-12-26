@@ -82,7 +82,7 @@ var game = {
         var check = localStorage.getItem(`user: ${currentuser}`) == null;
         localStorage.currentuser = '';
         if (check && localStorage.currentuser == '') {
-          return console.log(game.lang.parse(game.lang.profile.deletesuccess, currentlang));
+          console.log(game.lang.parse(game.lang.profile.deletesuccess, currentlang));
           return location.reload();
         } else { console.warn(game.else); };
       };
