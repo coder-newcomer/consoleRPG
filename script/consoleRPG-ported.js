@@ -32,17 +32,17 @@ var game = {
       // Store value as stringified Array
       if (localStorage.user.indexOf(',') == 0) { localStorage.user = localStorage.user.replace(',', ''); };
       // Store user data (savegame) as stringified JSON
-      localStorage.setItem('user: ' + username, JSON.stringify(json));
+      localStorage.setItem(`user: ${username}`, JSON.stringify(json));
       // Return status when success
-      if (localStorage.getItem('user: ' + username) == JSON.stringify(json)) {
+      if (localStorage.getItem(`user: ${username}`) == JSON.stringify(json)) {
         console.log(game.lang.parse(game.lang.profile.registered, currentlang));
       } else { console.warn(game.else); };
     },
     login: (username, password) => {
       // Check specified username existence, otherwise go ahead
-      if (localStorage.getItem('user: ' + username) == null) { return console.error(game.lang.parse(game.lang.profile.usernotexist, currentlang)); };
+      if (localStorage.getItem(`user: ${username}`) == null) { return console.error(game.lang.parse(game.lang.profile.usernotexist, currentlang)); };
       // Getting value and start verifying
-      var json = JSON.parse(localStorage.getItem('user: ' + username));
+      var json = JSON.parse(localStorage.getItem(`user: ${username}`));
       if (password == undefined) { password = ''; }; // Need to add exception when username has no password
       if (password == json.user.password) {
         localStorage.currentuser = username;
@@ -62,7 +62,7 @@ var game = {
       if (confirm(msg) == true) {
         var index = localStorage.user.split(',');
         for (var indexer = 0; indexer < index.length; indexer++) {
-          localStorage.removeItem('user: ' + index[indexer]);
+          localStorage.removeItem(`user: ${index[indexer]}`);
         }
         localStorage.removeItem('user');
         localStorage.removeItem('currentuser');
