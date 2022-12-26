@@ -32,7 +32,7 @@ Permissions of this strong copyleft license are conditioned on making available 
 #### Technology used on this project:
 - Basic and static web programming language ([HTML](https://wikipedia.org/wiki/HTML "Hypertext Markup Language"), [CSS](https://wikipedia.org/wiki/CSS "Cascading Style Sheet"), [Javascript](https://id.wikipedia.org/wiki/JavaScript "Javascript")).
 - [Live.js](http://livejs.com/ "Live.js") - modified a little for better user experiences.
-- [jQuery](https://jquery.com/ "jQuery") 3.6.1 (minimal-compressed).
+- [jQuery](https://jquery.com/ "jQuery").
 - ~~[Bootstrap](https://getbootstrap.com/ "Bootstrap") 5.2.3 (all file are included in the source and backup directory).~~
 (I plan to not use bootstrap for now and focus on using Material Design as the main framework. The framework itself may still linked to the project though).
 - [Google Material Design 2](https://m2.material.io/ "Google Material Design 2") web component.

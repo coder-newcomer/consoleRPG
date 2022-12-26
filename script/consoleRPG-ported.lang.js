@@ -34,10 +34,16 @@ game.lang.profile = {
   },
   "loginsuccess": {
     "en": "Login success!",
-    "id": "Login berhasil!"
+    "id": "Berhasil masuk!"
   },
   "logoutsuccess": {
     "en": "Logout success!",
-    "id": "Logout berhasil!"
+    "id": "Berhasil keluar!"
+  },
+  "clearsuccess": {
+    "en": "All profile and user data have been deleted successfully. You have been logout too and your user data have gone. Reload in 5 seconds!",
+    "id": "Seluruh data dan profil pengguna telah berhasil dihapus. Data Anda juga telah dihapus dan Anda telah keluar. Memuat ulang dalam 5 detik!"
   }
 };
+
+game.else = game.lang.parse(game.lang.profile.wrong1, currentlang);
