@@ -6,7 +6,7 @@ It's focused as casual RPG game on a web. What you need is just playing it like 
 
 This game inspired from a [Whatsapp Bot](# "Source Needed!") RPG game and the original RPG game element. But because of limitations of my devices that cannot use any of game engine and my acknowledge, i try to bring it on web (console) instead.
 
-Note: This project is still in early development. Very not work for now!
+>Note: This project is still in early development. Very not work for now!
 
 ## 💠 Upcoming Feature & Concept
  Job you can do
