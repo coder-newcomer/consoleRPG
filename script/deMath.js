@@ -2,6 +2,10 @@ var deMath = {
   quotient: (numerator, denumerator) => { return Math.trunc(numerator / denumerator); },
   dequotient: (numerator, denumerator) => { return numerator - (denumerator * Math.trunc(numerator / denumerator)); },
   dec2num: (number, denumber) => {
+    /* 
+    dec2num: function to convert any decimal number to any available
+             number type (currently: [biner, octal, hexadecimal])
+    */
     if (![2, 8, 16].includes(denumber)) {
       throw new Error(`Invaild denumber(${denumber}) value: expected value [2, 8, 16]`);
     } else {
