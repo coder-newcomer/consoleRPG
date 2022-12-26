@@ -21,12 +21,7 @@ var deMath = {
       if (numberator < denumber) { count.unshift(numberator); };
       if (denumber = 16) {
         var recount = count.join();
-        recount = recount.replaceAll('10', 'A');
-        recount = recount.replaceAll('11', 'B');
-        recount = recount.replaceAll('12', 'C');
-        recount = recount.replaceAll('13', 'D');
-        recount = recount.replaceAll('14', 'E');
-        recount = recount.replaceAll('15', 'F');
+        recount = recount.replaceAll('10', 'A').replaceAll('11', 'B').replaceAll('12', 'C').replaceAll('13', 'D').replaceAll('14', 'E').replaceAll('15', 'F');
         count = recount.split(',');
       };
       return count.join('');
