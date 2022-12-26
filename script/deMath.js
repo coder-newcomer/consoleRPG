@@ -3,8 +3,11 @@ var deMath = {
   dequotient: (numerator, denumerator) => { return numerator - (denumerator * Math.trunc(numerator / denumerator)); },
   dec2num: (number, denumber) => {
     /* 
-    dec2num: function to convert any decimal number to any available
-             number type (currently: [biner, octal, hexadecimal])
+    dec2num: function to convert any decimal number to any available number type (currently: [biner, octal, hexadecimal])
+    Usage: deMath.dec2num(numerator, denumerator)
+           numerator    => first decimal number to be converted
+           denumerator  => value of number type, accept [2 = biner, 8 = octal, 16 = hexadecimal]
+    Example: deMath.dec2num(428, 16) => convert value '428' to number type[16] (hexadecimal) => return '1A2'
     */
     if (![2, 8, 16].includes(denumber)) {
       throw new Error(`Invaild denumber(${denumber}) value: expected value [2, 8, 16]`);
@@ -30,6 +33,13 @@ var deMath = {
     };
   },
   num2dec: (number, numbertype) => {
+    /* 
+    num2dec: opposite of dec2num, function to convert any available number type (currently: [biner, octal, hexadecimal]) to any decimal number
+    Usage: deMath.num2dec(numerator, denumerator)
+           numerator    => first any available number type number to be converted
+           numbertype   => value of the specified number type from numerator, accept [2 = biner, 8 = octal, 16 = hexadecimal]
+    Example: deMath.num2dec(1AB, 16) => convert value '1AB' as number type[16] (hexadecimal) to decimal => return '427'
+    */
     if (![2, 8, 16].includes(numbertype)) {
       throw new Error(`Invaild numbertype(${numbertype}) value: expected value [2, 8, 16]`);
     } else {
