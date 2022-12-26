@@ -33,16 +33,26 @@ game.lang.profile = {
     "id": "Username atau password salah!"
   },
   "loginsuccess": {
-    "en": "Login success!",
+    "en": "Log in success!",
     "id": "Berhasil masuk!"
   },
   "logoutsuccess": {
-    "en": "Logout success!",
+    "en": "Log out success!",
     "id": "Berhasil keluar!"
   },
   "clearsuccess": {
-    "en": "All profile and user data have been deleted successfully. You have been logout too and your user data have gone. Reload in 5 seconds!",
-    "id": "Seluruh data dan profil pengguna telah berhasil dihapus. Data Anda juga telah dihapus dan Anda telah keluar. Memuat ulang dalam 5 detik!"
+    "en": "All profile and user data have been deleted successfully. You have been logout too and your user data have gone. Reload in a second!",
+    "id": "Seluruh data dan profil pengguna telah berhasil dihapus. Data Anda juga telah dihapus dan Anda telah keluar. Memuat ulang dalam hitungan detik!"
+  },
+  "deletesuccess": {
+    "en": "Your profile have been deleted. Log out in a second!",
+    "id": "Profil Anda telah dihapus. Keluar dalam hitungan detik!"
+  },
+  "clearmsg": {
+    "en": `You are attempted to delete all user profile, you will be logout and your profile "${currentuser()}" will be deleted too. Are you sure?`
+  },
+  "deletemsg": {
+    "en": `Are you sure want to delete your own profile "${currentuser()}"? This cannot be undone unless you have export it before!`
   }
 };
 
