@@ -1,6 +1,6 @@
 var deMath = {
-  quotient: (numerator, denumerator) => { return Math.trunc(numerator/denumerator); },
-  dequotient: (numerator, denumerator) => { return numerator - (denumerator * Math.trunc(numerator/denumerator)); },
+  quotient: (numerator, denumerator) => { return Math.trunc(numerator / denumerator); },
+  dequotient: (numerator, denumerator) => { return numerator - (denumerator * Math.trunc(numerator / denumerator)); },
   dec2num: (number, denumber) => {
     if (![2, 8, 16].includes(denumber)) {
       throw new Error(`Invaild denumber(${denumber}) value: expected value [2, 8, 16]`);
