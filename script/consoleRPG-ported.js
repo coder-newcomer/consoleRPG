@@ -3,14 +3,14 @@ var game = {
   xml: '<test>yes</test>', // XML testing, alternative translation for JSON if possible
   lang: { // lang is all about language, all feature related must be placed here
     parse: (stringid, langid) => { // language parse function for multi-language support
-      var lang = JSON.stringify(stringid).replaceAll('{"', '').replaceAll('"}', '').replaceAll('","', '":"').split('":"');
+      var lang = JSON.stringify(stringid).replaceAll('{"', '').replaceAll('"}', '').replaceAll('","', '":"').replaceAll('\\','').split('":"');
       // Error handler
       var err = 'The specified stringid object doesn\'t have a valid translation on it\'s own constructor following the specified langid value. Make sure you specify the right langid value or the specified stringid doesn\'t have the right translation that match with the specified langid value.';
       var condition = [!JSON.stringify(stringid).includes('"langid":'.replaceAll('langid', langid)), lang.indexOf(langid) < 0]; // Two types of error condition checking [0,1]
       if (typeof stringid != 'object') { throw new ReferenceError(`Specified stringid must be an valid language object! ${stringid} is\'nt an object!`); } // Specified stringid must be an object
       else if (!JSON.stringify(stringid).includes('"en":')) { throw new TypeError('Specified stringid is invalid language object!'); } // Validate the stringid object constructor if they have at least one default translation langid (Default = en)
       else if (langid.length > 2 || typeof langid != 'string') { throw new TypeError('Unknown specified langid value!'); } // Currently the valid langid value is 2 digit string following in the format defined in RFC 5646: Tags for Identifying Languages (also known as BCP 47)
-      else if (condition[1]) { console.error(`Uncaught Error: ${err}`); console.warn('Warning: Fallback translation will be used!'); langid = 'en'; } // This error handler is unexpected sometimes, use try catch i think
+      else if (condition[1]) { console.warn(`Uncaught Error: ${err}`); console.warn('Warning: Fallback translation will be used!'); langid = 'en'; } // This error handler is unexpected sometimes, use try catch i think
       else { return lang[lang.indexOf(langid) + 1]; }
     }
   },
@@ -72,18 +72,18 @@ var game = {
       };
       if (localStorage.user == undefined && game.profile.currentuser == undefined) {
         console.log(game.lang.parse(game.lang.profile.clearsuccess, currentlang));
-        return location.reload();
+        return setTimeout(() => {location.reload()}, 1000);
       } else { console.warn(game.else); };
     },
     delete: () => {
       if (confirm(game.lang.parse(game.lang.profile.deletemsg, currentlang))) {
-        localStorage.user = localStorage.user.replace(currentuser, '').replaceAll(',,', ',');
-        localStorage.removeItem(`user: ${currentuser}`);
-        var check = localStorage.getItem(`user: ${currentuser}`) == null;
+        localStorage.user = localStorage.user.replace(game.profile.currentuser, '').replaceAll(',,', ',');
+        localStorage.removeItem(`user: ${game.profile.currentuser}`);
+        var check = localStorage.getItem(`user: ${game.profile.currentuser}`) == null;
         game.profile.currentuser = '';
         if (check && game.profile.currentuser == '') {
           console.log(game.lang.parse(game.lang.profile.deletesuccess, currentlang));
-          return location.reload();
+          return setTimeout(() => {location.reload()}, 1000);
         } else { console.warn(game.else); };
       };
     },
