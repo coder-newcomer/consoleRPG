@@ -49,10 +49,10 @@ game.lang.profile = {
     "id": "Profil Anda telah dihapus. Keluar dalam hitungan detik!"
   },
   "clearmsg": {
-    "en": `You are attempted to delete all user profile, you will be logout and your profile "${currentuser()}" will be deleted too. Are you sure?`
+    "en": `You are attempted to delete all user profile, you will be logout and your profile "${game.profile.currentuser}" will be deleted too. Are you sure?`
   },
   "deletemsg": {
-    "en": `Are you sure want to delete your own profile "${currentuser()}"? This cannot be undone unless you have export it before!`
+    "en": `Are you sure want to delete your own profile "${game.profile.currentuser}"? This cannot be undone unless you have export it before!`
   }
 };
 

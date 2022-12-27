@@ -15,7 +15,7 @@ var game = {
     }
   },
   profile: { // profile manager
-    currentuser: () => localStorage.currentuser,
+    currentuser: localStorage.currentuser,
     register: (username, password, nickname) => {
       // Setting JSON template as savegame
       var json = { "user": { "name": "", "password": "" } };
@@ -48,15 +48,15 @@ var game = {
     },
     login: (username, password) => {
       if (game.profile.verify(username, password)) {
-        localStorage.currentuser = username;
-        if (localStorage.currentuser == username) {
+        game.profile.currentuser = username;
+        if (game.profile.currentuser == username) {
           console.log(game.lang.parse(game.lang.profile.loginsuccess, currentlang));
         } else { console.warn(game.else); };
       } else { console.error(game.lang.parse(game.lang.profile.userpwincorrect, currentlang)); };
     },
     logout: () => {
-      localStorage.currentuser = '';
-      if (localStorage.currentuser == '') {
+      game.profile.currentuser = '';
+      if (game.profile.currentuser == '') {
         console.log(game.lang.parse(game.lang.profile.logoutsuccess, currentlang));
       } else { console.warn(game.else); }
     },
@@ -70,7 +70,7 @@ var game = {
         localStorage.removeItem('user');
         localStorage.removeItem('currentuser');
       };
-      if (localStorage.user == undefined && localStorage.currentuser == undefined) {
+      if (localStorage.user == undefined && game.profile.currentuser == undefined) {
         console.log(game.lang.parse(game.lang.profile.clearsuccess, currentlang));
         return location.reload();
       } else { console.warn(game.else); };
@@ -80,8 +80,8 @@ var game = {
         localStorage.user = localStorage.user.replace(currentuser, '').replaceAll(',,', ',');
         localStorage.removeItem(`user: ${currentuser}`);
         var check = localStorage.getItem(`user: ${currentuser}`) == null;
-        localStorage.currentuser = '';
-        if (check && localStorage.currentuser == '') {
+        game.profile.currentuser = '';
+        if (check && game.profile.currentuser == '') {
           console.log(game.lang.parse(game.lang.profile.deletesuccess, currentlang));
           return location.reload();
         } else { console.warn(game.else); };
