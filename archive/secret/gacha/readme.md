@@ -1,11 +1,12 @@
-# 💠 GI Gacha Guidance
+# 🍀 GI Gacha Guidance
 
-Genshin Impact gacha guidance ported to `javascript` for people who know
+Intinya panduan gacha untuk pemula yang tau cara kerja `javascript`\
+Jadikan panduan ini sebagai referensi karena hasil gacha mungkin tidak 100% akurat dan lebih bergantung kepada keberuntungan
 
-## 💠 Pity
+## 💠 Apa itu Pity?
 
-Pity = How much you gacha on each banner\
-Pity **10** = Gacha on **10x** times at current banner
+Pity = Indikator ke berapa kalinya gacha\
+Pity **10** = Gacha yang **ke-10** kalinya pada banner tersebut
 
 ```javascript
 var pity = 0; // first or reset
@@ -15,29 +16,33 @@ function { banner }.gacha(total) {
 };
 ```
 
-## 📜 Rules
+## 📜 Aturan
 
-**10x** Gacha = **B4**\
-Max Pity (**90**) = **B5** &rightarrow; Reset
+Pity **10** = **B4**\
+Max Pity = **B5** &rightarrow; Reset
 
-| Novice | Chara 1 | Chara 2 | Weapon | Standart |
-| :--: | :--: | :--: | :--: | :--: |
-| 90 | 90 | 90 | 80 | 90 |
+| Banner | Pemula | Chara 1 | Chara 2 | Senjata | Standar |
+| :--: | :--: | :--: | :--: | :--: | :--: |
+| Max Pity | 90 | 90 | 90 | 80 | 90 |
 
-`Pity 70+ => B5 Rate+`
+Karaker dan Senjata menggunakan **Interwind Fate**\
+Sedangkan, Pemula dan Standar menggunakan **Acquaint Fate**
 
-Special character have same pity
----
+Untuk pengingat `Pity 70+ => B5 Rate+`
+
+### Setiap banner Karakter memliki nilai pity yang sama
+
+Nilai pity kedua-duanya akan bertambah bersamaan
 
 ```javascript
 var pity = 0; // first or reset
 chara1.gacha(20) => {return pity += 20}; // 0 + 20 = 20
 chara2.gacha(25) => {return pity += 25}; // 20 + 25 = 45
-if (pity == 'b5') {pity = 0} ;// false
+if (pity == 'b5') {pity = 0} ; // false
 return pity; // 45
 ```
 
-If you win, pity will reset on both
+Kalau menang B5, pity kedua-duanya akan direset
 
 ```javascript
 var pity = 0; // first or reset
@@ -47,8 +52,7 @@ if (pity == 'b5') {pity = 0}; // true
 return pity; // 0
 ```
 
-Pity is inherited to next banner (except weapon)
----
+### Jumlah pity dapat diwariskan atau diteruskan ke banner selanjutnya
 
 ```javascript
 var pity = 0; // first or reset
@@ -63,11 +67,17 @@ if (pity == 'b5') {pity = 0}; // false
 return pity; // 58
 ```
 
-This is often called **Pity Deposit**
+Kondisi ini sering disebut dengan istilah **Nabung Pity**, yaitu **memperbanyak jumlah pity** pada banner karakter **sebelumnya** dan **membiarkannya** tanpa direset agar dapat **dipakai kembali** di banner karakter **selanjutnya**
 
-## 📈 Rate Off & Rate On
+## 📈 Rate On & Rate Off
+
+Kondisi  **sebelum** dan **sesudah** mendapatkan **karakter B5** sebagai patokan karakter B5 **yang akan didapat** dan karakter B5 **selanjutnya**
+
+### 📳 Rate On 📴
+
+Kondisi dimana akan mendapatkan **Karakter Spesial B5** banner
 
 ## 📖 Istilah
 
-Soft Pity < 50x = B5 on low pity\
-Hard Pity > 50x = B5 on high pity
+Soft Pity < 50x = B5 di pity rendah\
+Hard Pity > 50x = B5 di pity tinggi
