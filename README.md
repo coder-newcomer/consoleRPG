@@ -16,7 +16,7 @@ This game inspired from a [Whatsapp Bot](# "Source Needed!") RPG game and the or
 
 - This section is unavailable because the developer are being so busy doing another job, Please.
 
->I also planned to port the game to mobile in the future, but i still considering using a framework (like [Cordova](https://cordova.apache.org/)) or keep it on the web.
+>I also planned to port the game to mobile in the future, but i still considering using a native framework (for both platform, like React Native) or keep it on the web.
 
 ## ⚙️ Installation & Setup
 
