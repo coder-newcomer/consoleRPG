@@ -124,14 +124,4 @@ result[0].star == 5; true
 result; // [charX, 0]
 ```
 
-## 🔮 Tips & Triks
-
-### Tabung primo sebanyak mungkin untuk karakter yang memang dinginkan
-
-Setidaknya **tahanlah** nafsumu untuk *gacha* jika kalian memang adalah **player f2p** (free-to-player atau gratisan), kalau ada duitnya mah ya terserah kalian.\
-\
-Kalau kalian memang ingin benar-benar mendapatkan karakter yang diinginkan, kalian bisa tabung primogem hingga perkiraan max pity tadi, cukup banyak memang.
-
-Namun ada banyak cara untuk mendapatkan primogem. Secara *Interwind Fate* memang lebih sulit didapat daripada primogem ataupun *Acquaint Fate*. Tapi, tidak ada salahnya kan bekerja keras untuk suatu hal. Bisa saja hasil kerja keras kalian malah berbuah hasil ganda? Andaikan, kalian malah mendapat 2 Karakter B5 dari hasil menabung primo kalian secara tidak terduga!?
-
-> Game 
+> Tips and Triks coming soon!
