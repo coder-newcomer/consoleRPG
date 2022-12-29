@@ -61,3 +61,6 @@ var deMath = {
     };
   }
 };
+
+// try here on console
+//console.log(deMath.quotient(5, 8));

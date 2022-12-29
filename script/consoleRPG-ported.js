@@ -1,9 +1,14 @@
+// Add lang module manually to webpage,
+// change the src value manually depend on script location
+document.querySelector('body').append(document.createElement('script'));
+document.querySelector('body').querySelectorAll('script')[document.querySelector('body').querySelectorAll('script').length - 1].src = 'script/consoleRPG-ported.lang.js';
+
 var currentlang = navigator.language;
 var game = {
   xml: '<test>yes</test>', // XML testing, alternative translation for JSON if possible
   lang: { // lang is all about language, all feature related must be placed here
     parse: (stringid, langid) => { // language parse function for multi-language support
-      var lang = JSON.stringify(stringid).replaceAll('{"', '').replaceAll('"}', '').replaceAll('","', '":"').replaceAll('\\','').split('":"');
+      var lang = JSON.stringify(stringid).replaceAll('{"', '').replaceAll('"}', '').replaceAll('","', '":"').replaceAll('\\', '').split('":"');
       // Error handler
       var err = 'The specified stringid object doesn\'t have a valid translation on it\'s own constructor following the specified langid value. Make sure you specify the right langid value or the specified stringid doesn\'t have the right translation that match with the specified langid value.';
       var condition = [!JSON.stringify(stringid).includes('"langid":'.replaceAll('langid', langid)), lang.indexOf(langid) < 0]; // Two types of error condition checking [0,1]
@@ -14,13 +19,15 @@ var game = {
       else { return lang[lang.indexOf(langid) + 1]; }
     }
   },
-  profile: { // profile manager
+  profile: { // Profile manager
     currentuser: localStorage.currentuser,
     register: (username, password, nickname) => {
+      // Checking available user
+      //if (game.profile.verify(username, password)) { return console.error(game.lang.parse(game.lang.profile.)); };
       // Setting JSON template as savegame
       var json = { "user": { "name": "", "password": "" } };
-      if (nickname == undefined) { nickname = ''; };
-      if (password == undefined) { password = ''; };
+      if (nickname == undefined) { nickname = nick; };
+      if (password == undefined) { password = pass; };
       json.user.name = nickname;
       json.user.password = password;
       // Checking if userlist (user) on localStorage is exist, otherwise create new one with empty value to prevent error
@@ -62,7 +69,7 @@ var game = {
     },
     clear: () => {
       if (confirm(game.lang.parse(game.lang.profile.clearmsg, currentlang))) {
-        if (localStorage.user == undefined) { throw new Error('No registered user exist, it\'s clean now!') };
+        if (localStorage.user == undefined) { throw new Error('No registered user exist, it\'s clean now!'); };
         var index = localStorage.user.split(',');
         for (var indexer = 0; indexer < index.length; indexer++) {
           localStorage.removeItem(`user: ${index[indexer]}`);
@@ -72,7 +79,7 @@ var game = {
       };
       if (localStorage.user == undefined && game.profile.currentuser == undefined) {
         console.log(game.lang.parse(game.lang.profile.clearsuccess, currentlang));
-        return setTimeout(() => {location.reload()}, 1000);
+        return setTimeout(() => { location.reload(); }, 1000);
       } else { console.warn(game.else); };
     },
     delete: () => {
@@ -83,7 +90,7 @@ var game = {
         game.profile.currentuser = '';
         if (check && game.profile.currentuser == '') {
           console.log(game.lang.parse(game.lang.profile.deletesuccess, currentlang));
-          return setTimeout(() => {location.reload()}, 1000);
+          return setTimeout(() => { location.reload(); }, 1000);
         } else { console.warn(game.else); };
       };
     },
@@ -93,5 +100,5 @@ var game = {
   }
 };
 
-function experimental() { return console.log(game.lang.parse(game.lang.example.experimental, currentlang)) };
+function experimental() { return console.log(game.lang.parse(game.lang.example.experimental, currentlang)); };
 //console.log(null);
