@@ -59,6 +59,23 @@ var deMath = {
       };
       return counted;
     };
+  },
+  getRandom: (min, max, round) => {
+    try {
+      switch (round) {
+        case undefined:
+        case false:
+          return Math.random() * (max - min) + min;
+        case true:
+          return Math.round(Math.random() * (max - min) + min);
+        case 'int':
+          min = Math.ceil(min);
+          max = Math.floor(max);
+          return Math.floor(Math.random() * (max - min) + min);
+        default:
+          throw new TypeError('Expected round value = [ true | false | "int" ]');
+      }
+    } catch (e) { throw e; };
   }
 };
 

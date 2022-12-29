@@ -111,7 +111,7 @@ Dengan kata lain, ketika berhasil mendapatkan **salah satu** karakter B5 standar
 
 ### 📴 Rate Off
 
-Kondisi normal atau biasa saat *gacha*. Ketika kalian berhasil mendapatkan karakter B5, itu bisa saja **Karakter Spesial** atau **Karakter Standar**, tergantung keberuntungan kalian. Ketika mendapatkan **Karakter Spesial** dikondisi ini sering disebut **menang rate off**, dn kalo kalah disebut **kalah rate off**.
+Kondisi normal atau biasa saat *gacha*. Ketika kalian berhasil mendapatkan karakter B5, itu bisa saja **Karakter Spesial** atau **Karakter Standar**, tergantung keberuntungan kalian. Ketika mendapatkan **Karakter Spesial** dikondisi ini sering disebut **menang rate off**, dan kalo kalah disebut **kalah rate off**.
 
 > Kalau kalah rate on itu gak tau, soalnya gak pernah dengar dan tau itu.
 
