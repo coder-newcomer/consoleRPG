@@ -1,93 +1,64 @@
 <!doctype html>
 <html>
-  <head>
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="style/style.css">
-    <link id="e" rel="stylesheet" href="style/error.css">
-    <meta charset="utf-8">
-    <meta id="metadata" author="coder-newcomer" title="consoleRPG" description="play RPG game on console" version="2022.12.14" channel="alpha">
-    <title>consoleRPG - play RPG game on console</title>
-  </head>
-  <body>
-    <document id="main" style="display: none;height: 100%;">
-      <div class="place left"></div>
-      <div class="place center">
-        <window id="console">
-          <header class="window">
-            <span class="title">🖥️ Console</span>
-            <button class="x-btn" id="x-main"></button>
-          </header>
-          <div id="msg">
-            <div class="line demo">
-              <span class="msg-icon send">&minus;&gt;</span>
-              <span class="msg-text send">Send message will look like this</span>
-            </div>
-            <div class="line demo">
-              <span class="msg-icon send">  </span>
-              <span class="msg-text send">Send message (no-icon) will look like this</span>
-            </div>
-            <div class="line demo">
-              <span class="msg-icon get">&lt;&minus;</span>
-              <span class="msg-text get">Get message will look like this</span>
-            </div>
-            <div class="line demo">
-              <span class="msg-icon get">  </span>
-              <span class="msg-text get">Get message (no-icon) will look like this</span>
-            </div>
-            <div class="line demo">
-              <span class="msg-icon info">ℹ️</span>
-              <span class="msg-text info">Info message will look like this</span>
-            </div>
-            <div class="line demo">
-              <span class="msg-icon warn">⚠</span>
-              <span class="msg-text warn">Warning message will look like this</span>
-            </div>
-            <div class="line demo">
-              <span class="msg-icon error">🛑</span>
-              <span class="msg-text error">Error message will look like this</span>
-            </div>
-          </div>
-          <footer id="msg-place">
-            <input type="text" id="msg-input" placeholder="Input command">
-            <button id="msg-send" title="Send"></button>
-          </footer>
-        </window>
+<head>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style/style.css">
+  <link id="err" rel="stylesheet" href="style/error.css">
+  <meta charset="utf-8">
+  <meta id="metadata" author="coder-newcomer" title="consoleRPG" description="play RPG game on console" version="2022.12.30" channel="dev">
+  <title>consoleRPG - play RPG game on console</title>
+</head>
+<body>
+  <document id="main" style="display: none;height: 100%;">
+    <p>Could not load the page</p>
+    <p>Press <kbd>Ctrl+Shift+i</kbd> or <kbd>F12</kbd> to open Devtools and play on the console instead</p>
+  </document>
+  <noscript>
+    <document class="full">
+      <div class="full">
+        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="128" viewBox="0 0 20 20"
+          style="margin: 1em 0;">
+          <rect fill="none" height="24" width="24" />
+          <path
+            d="M18,10l-2.94,2.94L14,11.88L15.88,10l-3.94-3.94L13,5L18,10z M16.01,18.13l1.06-1.06L2.93,2.93L1.87,3.99l3.07,3.07L2,10 l5,5l1.06-1.06L4.12,10L6,8.12L16.01,18.13z" />
+          </path>
+        </svg>
+        <h2 class="info">Javascript is Disabled</h2>
+        <p class="reason">
+          It might be annoying. <br>But this page need Javascript to run itself.
+        </p>
+        <p class="advice">
+          Find a way to enable Javascript on this page on your Browser, so you can continue use this page. <br>
+          Usually by Settings or some option with your Extention.<br>
+          <br>
+          <a href>Refresh</a> this page after done.
       </div>
-      <div class="place right"></div>
     </document>
-    <noscript>
-      <document class="full">
-        <div class="full">
-          <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="128" viewBox="0 0 20 20" style="margin: 1em 0;">
-            <rect fill="none" height="24" width="24"/>
-            <path d="M18,10l-2.94,2.94L14,11.88L15.88,10l-3.94-3.94L13,5L18,10z M16.01,18.13l1.06-1.06L2.93,2.93L1.87,3.99l3.07,3.07L2,10 l5,5l1.06-1.06L4.12,10L6,8.12L16.01,18.13z"/></path>
-          </svg>
-          <h2 class="info">Javascript is Disabled</h2>
-          <p class="reason">
-            It might be annoying. <br>But this page need Javascript to run itself.
-          </p>
-          <p class="advice">
-            Find a way to enable Javascript on this page on your Browser, so you can continue use this page. <br>
-            Usually by Settings or some option with your Extention.<br>
-            <br>
-            <a href>Refresh</a>
-            this page after done.
-        </div>
-      </document>
-    </noscript>
-  </body>
-  <style>html,body{margin: unset;padding: unset;height: 100%;}*{box-sizing: border-box;}</style>
-  <script id="noscript">
+  </noscript>
+</body>
+<style>
+  html,
+  body {
+    margin: unset;
+    padding: unset;
+    height: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+</style>
+<script id="noscript">
   //document.querySelector('title').textContent = 'Konversi Bilangan v1.4.6 beta | bugfix in progress';
   document.querySelector('noscript').remove();
   document.getElementById('main').style.display = "flex";
-  document.getElementById('e').remove();
+  document.getElementById('err').remove();
   document.getElementById('noscript').remove();
   // self-remove
-  </script>
-  <script src="source/jquery-3.6.1.js"></script>
-  <script src="source/modified-live.js"></script>
-  <script src="script/deMath.js"></script>
-  <script src="script/consoleRPG-ported.js"></script>
-  <script src="script/script.js"></script>
+</script>
+<script src="source/jquery-3.6.1.js"></script>
+<script src="source/modified-live.js"></script>
+<script src="script/deMath.js"></script>
+<script src="script/consoleRPG-ported.js"></script>
+<!--script src="script/script.js"></script-->
 </html>

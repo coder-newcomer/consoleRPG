@@ -1,0 +1,126 @@
+@font-face {
+  font-family: Segoe Fluent Icons;
+  src: url('../asset/font/SegoeIcons.ttf');
+} /* font-point */
+
+:root {
+  --icons: Segoe Fluent Icons;
+  --emoji: Apple Color Emoji, Noto Color Emoji, Segoe UI Emoji, emoji, Segoe UI Symbol, system-ui;
+  --monospace: Consolas, monospace, Noto Sans Mono, var(--emoji);
+  --size: 6px;
+  --bezier1:cubic-bezier(0.5, 0, 0, 1);
+  --bezier2: cubic-bezier(0, 0, 0, 1);
+  --accent: #3F51B5;
+  --accent-dark: #303F9F;
+}
+
+.place {
+  display: flex;
+  color: white;
+  padding: calc(var(--size)*3);
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--accent);
+  background: var(--accent);
+  font-size: 9pt;
+  font-family: system-ui;
+  user-select: none;
+  white-space: pre;
+}
+
+.title {
+  margin: var(--size);
+}
+window {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  background: black;
+  border: 1px solid var(--accent);
+  border-radius: calc(var(--size)*2);
+  transition: 1s var(--bezier1);
+  flex-direction: column;
+}
+window:hover {
+  box-shadow: 0 0 var(--size) grey;
+}
+
+button {user-select:none;}
+#x-main, #msg-send {
+  font-family: var(--icons);
+}
+#x-main {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 11pt;
+  width: calc(var(--size)*5);
+}
+#x-main:hover {
+  background: rgb(255 0 0 / 75%);
+}
+
+#msg {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  margin: unset;
+  padding: 0 calc(var(--size)*3);
+  padding-top: calc(var(--size)*2);
+  height: 100%;
+  font-family:
+  var(--monospace);
+  font-size: 10pt;
+}
+#msg-place {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--size)*2);
+}
+#msg-input {
+  width: 100%;
+  padding: calc(var(--size)*1.5);
+  outline: none;
+  border: calc(var(--size)/3) solid grey;
+  border-radius: calc(var(--size)*1.5);
+  font-family: var(--monospace);
+  font-size: 10pt;
+  transition: 1s var(--bezier1);
+}
+#msg-input:hover, #msg-send:hover, #msg-send:focus {
+  box-shadow: 0 0 var(--size) lightgrey;
+}
+#msg-input:focus {border: calc(var(--size)/3) solid var(--accent);}
+#msg-send {
+  cursor: pointer;
+  color: white;
+  background: var(--accent);
+  border: none;
+  border-radius: calc(var(--size)*2);
+  text-align: center;
+  padding: calc(var(--size)*2);
+  margin-left: var(--size);
+  height: 100%;
+  transition: 1s var(--bezier1);
+}
+#msg-send:focus {outline: none;}
+#msg-send:active {
+  transition: 0.15s var(--bezier1);
+  background: var(--accent-dark);
+}
+
+.msg-text {/* padding: calc(var(--size)/3); */padding-left: var(--size);white-space: pre;width: 100%;}
+.line {display: flex;align-items: center;}
+.demo{display: none;}
+.msg-icon {align-self: flex-start;cursor: help;padding: 0 calc(var(--size)/3);white-space: pre;}
+.msg-icon.error, .msg-icon.warn, .msg-icon.info {font-family: var(--emoji);}
+.msg-icon.send {color: lime;}
+.get {background: rgb(255 255 255 / 15%);}
+.msg-icon.get {color: yellow;background: rgb(255 255 255 / 25%);}
+.msg-icon.info{}

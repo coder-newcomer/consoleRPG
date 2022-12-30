@@ -40,4 +40,10 @@
 ## 2022-12-30
 
 - Lots bug fix.
-- Added more error handler for each feature when possible
+- Added more error handler for each feature when possible.
+- Added bunch of feature
+  - Verify, new method for doing permissive action, will be used almost.
+  - Clear, clear all registered user and also self-delete and logout.
+  - Delete, delete current logged user.
+  - Data, user data related group of feature.
+    - Modify, modify user data (add/delete).
