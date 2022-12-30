@@ -119,9 +119,12 @@ var game = {
       export: () => experimental(), // need to understand file API for both of this
       import: (urlORjson) => experimental()
     }
-
   }
 };
+
+var game22 = {
+  
+}
 
 function experimental() { return console.log(game.lang.parse(game.lang.example.experimental, currentlang)); };
 //console.log(null);
