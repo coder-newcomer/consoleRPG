@@ -95,8 +95,8 @@ var game = {
         } else { console.warn(game.else); };
       };
     },
-    data: { // i don't know
-      add: (valueOrJSONString, object) => {
+    data: {
+      modify: (valueOrJSONString, object) => {
         // Get current user data and parse it to JSON for flexibility as Javascript object
         var json = JSON.parse(localStorage.getItem(`user: ${localStorage.currentuser}`));
         // null isn't accepted

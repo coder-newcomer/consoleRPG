@@ -12,7 +12,7 @@ game.lang.example = { // Example usage of Translation | Do not edit!
     "en": "Coming soon!",
     "id": "Segera!"
   }
-}
+};
 game.lang.profile = {
   // Translation goes here
   // Currently supported language: [en = English, id = Indonesia]
