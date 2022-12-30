@@ -24,6 +24,10 @@ game.lang.profile = {
     "en": "Something wrong!",
     "id": "Ada sesuatu yang salah!"
   },
+  "userexist": {
+    "en": "Username already exist!",
+    "id": "Username sudah ada!"
+  },
   "usernotexist": {
     "en": "Username isn't exist!",
     "id": "Username tidak ada!"
@@ -57,3 +61,6 @@ game.lang.profile = {
 };
 
 game.else = game.lang.parse(game.lang.profile.wrong1, currentlang);
+heartbeatLang = setInterval(() => {
+  game.else = game.lang.parse(game.lang.profile.wrong1, currentlang);
+}, 1000);
