@@ -1,5 +1,5 @@
 // Add lang module manually to webpage,
-// change the src value manually depend on script location
+// define the src value manually depend on script relative location from the html
 document.querySelector('body').append(document.createElement('script'));
 document.querySelector('body').querySelectorAll('script')[document.querySelector('body').querySelectorAll('script').length - 1].src = 'script/consoleRPG-ported.lang.js';
 
@@ -20,10 +20,10 @@ var game = {
     }
   },
   profile: { // Profile manager
-    currentuser: localStorage.currentuser,
+    currentuser: localStorage.currentuser, // Use this outside the script
     register: (username, password, nickname) => {
-      // Checking available user
-      //if (game.profile.verify(username, password)) { return console.error(game.lang.parse(game.lang.profile.)); };
+      // Checking availability of user
+      if (localStorage.getItem(`user: ${username}`) != null) { return console.error(game.lang.parse(game.lang.profile.userexist, currentlang)); };
       // Setting JSON template as savegame
       var json = { "user": { "name": "", "password": "" } };
       if (nickname == undefined) { nickname = nick; };
@@ -45,7 +45,7 @@ var game = {
         console.log(game.lang.parse(game.lang.profile.registered, currentlang));
       } else { console.warn(game.else); };
     },
-    verify: (username, password) => { // This function used to verify username with password and returned boolean, used almost
+    verify: (username, password) => { // This function used to verify username with password and return boolean, used almost
       // Check specified username existence, otherwise go ahead
       if (localStorage.getItem(`user: ${username}`) == null) { return console.error(game.lang.parse(game.lang.profile.usernotexist, currentlang)); };
       // Getting value and start verifying
@@ -55,21 +55,21 @@ var game = {
     },
     login: (username, password) => {
       if (game.profile.verify(username, password)) {
-        game.profile.currentuser = username;
-        if (game.profile.currentuser == username) {
+        localStorage.currentuser = username;
+        if (localStorage.currentuser == username) {
           console.log(game.lang.parse(game.lang.profile.loginsuccess, currentlang));
         } else { console.warn(game.else); };
       } else { console.error(game.lang.parse(game.lang.profile.userpwincorrect, currentlang)); };
     },
     logout: () => {
-      game.profile.currentuser = '';
-      if (game.profile.currentuser == '') {
+      localStorage.currentuser = '';
+      if (localStorage.currentuser == '') {
         console.log(game.lang.parse(game.lang.profile.logoutsuccess, currentlang));
       } else { console.warn(game.else); }
     },
     clear: () => {
       if (confirm(game.lang.parse(game.lang.profile.clearmsg, currentlang))) {
-        if (localStorage.user == undefined) { throw new Error('No registered user exist, it\'s clean now!'); };
+        if (localStorage.user == undefined) { console.log('No registered user exist, it\'s clean now!'); };
         var index = localStorage.user.split(',');
         for (var indexer = 0; indexer < index.length; indexer++) {
           localStorage.removeItem(`user: ${index[indexer]}`);
@@ -77,26 +77,49 @@ var game = {
         localStorage.removeItem('user');
         localStorage.removeItem('currentuser');
       };
-      if (localStorage.user == undefined && game.profile.currentuser == undefined) {
+      if (localStorage.user == undefined && localStorage.currentuser == undefined) {
         console.log(game.lang.parse(game.lang.profile.clearsuccess, currentlang));
         return setTimeout(() => { location.reload(); }, 1000);
       } else { console.warn(game.else); };
     },
     delete: () => {
       if (confirm(game.lang.parse(game.lang.profile.deletemsg, currentlang))) {
-        localStorage.user = localStorage.user.replace(game.profile.currentuser, '').replaceAll(',,', ',');
-        localStorage.removeItem(`user: ${game.profile.currentuser}`);
-        var check = localStorage.getItem(`user: ${game.profile.currentuser}`) == null;
-        game.profile.currentuser = '';
-        if (check && game.profile.currentuser == '') {
+        localStorage.user = localStorage.user.replace(localStorage.currentuser, '').replaceAll(',,', ',');
+        if (localStorage.user.indexOf(',') == 0) { localStorage.user = localStorage.user.replace(',', ''); };
+        localStorage.removeItem(`user: ${localStorage.currentuser}`);
+        var check = localStorage.getItem(`user: ${localStorage.currentuser}`) == null;
+        localStorage.currentuser = '';
+        if (check && localStorage.currentuser == '') {
           console.log(game.lang.parse(game.lang.profile.deletesuccess, currentlang));
           return setTimeout(() => { location.reload(); }, 1000);
         } else { console.warn(game.else); };
       };
     },
-    export: () => experimental(),
-    import: (urlORjson) => experimental(),
-    reset: () => experimental()
+    data: { // i don't know
+      add: (valueOrJSONString, object) => {
+        // Get current user data and parse it to JSON for flexibility as Javascript object
+        var json = JSON.parse(localStorage.getItem(`user: ${localStorage.currentuser}`));
+        // null isn't accepted
+        if (json == null) { return console.error(game.lang.parse(game.lang.profile.usernotexist, currentlang)); };
+        switch (object) {
+          case undefined:
+          case false:
+            json.data = JSON.parse(valueOrJSONString);
+            break;
+          default:
+            if (typeof valueOrJSONString != 'string') { json.data = JSON.parse(`{"${object}": ${valueOrJSONString}}`); }
+            else if (valueOrJSONString.charAt(0) == '{' && valueOrJSONString.charAt(valueOrJSONString.length - 1) == '}') { json.data = JSON.parse(`{"${object}":${valueOrJSONString}}`); }
+            else { json.data = JSON.parse(`{"${object}": "${valueOrJSONString}"}`); };
+            break;
+        };
+        localStorage.setItem(`user: ${localStorage.currentuser}`) = json;
+        return json;
+        //json.data =
+      },
+      export: () => experimental(), // need to understand file API for both of this
+      import: (urlORjson) => experimental()
+    }
+
   }
 };
 
