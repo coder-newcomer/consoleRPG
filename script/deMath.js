@@ -1,13 +1,20 @@
+/**
+ * deMath.js beta © 2023 coder-newcomer
+ * A simple JavaScript library to processing advanced mathematical operation with single function
+ * 
+ * Features still incomplete but it's working!
+ */
+
 var deMath = {
   quotient: (numerator, denumerator) => { return Math.trunc(numerator / denumerator); },
   dequotient: (numerator, denumerator) => { return numerator - (denumerator * Math.trunc(numerator / denumerator)); },
   dec2num: (number, denumber) => {
     /* 
-    dec2num: function to convert any decimal number to any available number type (currently: [biner, octal, hexadecimal])
+    dec2num: Function to convert any decimal number to any available number type (currently: [biner, octal, hexadecimal])
     Usage: deMath.dec2num(numerator, denumerator)
            numerator    => first decimal number to be converted
            denumerator  => value of number type, accept [2 = biner, 8 = octal, 16 = hexadecimal]
-    Example: deMath.dec2num(428, 16) => convert value '428' to number type[16] (hexadecimal) => return '1A2'
+    Example: deMath.dec2num(250, 2) => convert value '250' to number type[2] (biner) => return '11111010'
     */
     if (![2, 8, 16].includes(denumber)) {
       throw new Error(`Invaild denumber(${denumber}) value: expected value [2, 8, 16]`);
@@ -29,7 +36,7 @@ var deMath = {
   },
   num2dec: (number, numbertype) => {
     /* 
-    num2dec: opposite of dec2num, function to convert any available number type (currently: [biner, octal, hexadecimal]) to any decimal number
+    num2dec: The opposite of dec2num, function to convert any available number type (currently: [biner, octal, hexadecimal]) to any decimal number
     Usage: deMath.num2dec(numerator, denumerator)
            numerator    => first any available number type number to be converted
            numbertype   => value of the specified number type from numerator, accept [2 = biner, 8 = octal, 16 = hexadecimal]
@@ -78,6 +85,8 @@ var deMath = {
     } catch (e) { throw e; };
   }
 };
+
+// for large number, this script need bigInt
 
 // try here on console
 //console.log(deMath.quotient(5, 8));

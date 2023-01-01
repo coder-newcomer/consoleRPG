@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+  <system lang="en" user="admin">userAgent</system>
+  <profile>
+    <user id="1">
+      <name>admin</name>
+      <nickname>Admin</nickname>
+      <password>admin</password>
+      <data level="60" xp="9999999" money="9999999">
+        <inventory>yes</inventory>
+        <armor>yes</armor>
+        <weapon>yes</weapon>
+      </data>
+    </user>
+  </profile>
+</root>

@@ -10,8 +10,8 @@
 </head>
 <body>
   <document id="main" style="display: none;height: 100%;">
-    <p>Could not load the page</p>
-    <p>Press <kbd>Ctrl+Shift+i</kbd> or <kbd>F12</kbd> to open Devtools and play on the console instead</p>
+    <h1>Could not load this page</h1>
+    <p>Press <kbd>Ctrl+Shift+I</kbd> or <kbd>F12</kbd> to open Devtools and play on the console instead</p>
   </document>
   <noscript>
     <document class="full">
@@ -19,16 +19,12 @@
         <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="128" viewBox="0 0 20 20"
           style="margin: 1em 0;">
           <rect fill="none" height="24" width="24" />
-          <path
-            d="M18,10l-2.94,2.94L14,11.88L15.88,10l-3.94-3.94L13,5L18,10z M16.01,18.13l1.06-1.06L2.93,2.93L1.87,3.99l3.07,3.07L2,10 l5,5l1.06-1.06L4.12,10L6,8.12L16.01,18.13z" />
-          </path>
+          <path d="M18,10l-2.94,2.94L14,11.88L15.88,10l-3.94-3.94L13,5L18,10z M16.01,18.13l1.06-1.06L2.93,2.93L1.87,3.99l3.07,3.07L2,10 l5,5l1.06-1.06L4.12,10L6,8.12L16.01,18.13z"></path> 
         </svg>
         <h2 class="info">Javascript is Disabled</h2>
-        <p class="reason">
-          It might be annoying. <br>But this page need Javascript to run itself.
-        </p>
+        <p class="reason">It may be unpleasant, But this page need Javascript to run itself</p>
         <p class="advice">
-          Find a way to enable Javascript on this page on your Browser, so you can continue use this page. <br>
+          Find any way to enable Javascript on this page on your Browser, so you can continue use this page.<br>
           Usually by Settings or some option with your Extention.<br>
           <br>
           <a href>Refresh</a> this page after done.
@@ -36,20 +32,9 @@
     </document>
   </noscript>
 </body>
-<style>
-  html,
-  body {
-    margin: unset;
-    padding: unset;
-    height: 100%;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-</style>
+<style>html,body {margin: unset;padding: unset;height: 100%;}* {box-sizing: border-box;}</style>
 <script id="noscript">
-  //document.querySelector('title').textContent = 'Konversi Bilangan v1.4.6 beta | bugfix in progress';
+  //document.querySelector('title').textContent = '';
   document.querySelector('noscript').remove();
   document.getElementById('main').style.display = "flex";
   document.getElementById('err').remove();
@@ -59,6 +44,8 @@
 <script src="source/jquery-3.6.1.js"></script>
 <script src="source/modified-live.js"></script>
 <script src="script/deMath.js"></script>
+<!--script src="script/flexJSON.js"></script-->
+<script src="script/deXML.js"></script>
 <script src="script/consoleRPG-ported.js"></script>
 <!--script src="script/script.js"></script-->
 </html>
