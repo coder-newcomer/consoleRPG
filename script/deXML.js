@@ -45,20 +45,41 @@ class XML {
       xml: {
         value: this.value.substring(this.value.indexOf('<?xml '), this.value.indexOf('?>') + 2)
       }
-    }
+    };
   };
   document = {
+    set: () => { document.querySelectorAll('xml').forEach((element) => { element.style.setProperty('display', 'none', 'important'); }); },
     attach: () => {
       document.querySelector('html').append(document.createElement('xml'));
-      document.querySelector('xml').innerHTML(this.value);
+      this.document.set();
+      var returned = document.querySelectorAll('xml')
+      returned[0].innerHTML = this.value;
+      return returned[0];
+    },
+    attachTo: (element) => {
+      element.append(document.createElement('xml'));
+      this.document.set();
+      var returned = element.querySelectorAll('xml');
+      returned[0].innerHTML = this.value;
+      return returned[0];
     },
     dettach: () => {
-      document.querySelector('xml').remove();
+      var returned = document.querySelector('html').querySelectorAll('xml');
+      returned.forEach((element) => { element.remove(); });
+      //return returned;
     },
-    element: document.querySelector('xml'),
-    text: document.querySelector('xml').innerHTML
+    dettachFrom: (element) => {
+      var returned = element.querySelectorAll('xml');
+      returned.forEach((element) => { element.remove(); });
+      //return returned;
+    },
+    element: () => {
+      return document.querySelector('html').querySelectorAll('xml')[0];
+    },
+    text: () => { return this.document.element.innerHTML; }
   };
-  getAttributes(node, attr) {
-    this.document.element
+  getAttributes(node, attr) { // fix point
+    node = node.trim().split(' ')
+    this.document.element;
   };
 }
