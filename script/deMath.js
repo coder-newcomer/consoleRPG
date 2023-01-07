@@ -1,32 +1,51 @@
 /**
- * deMath.js beta © 2023 coder-newcomer
- * A simple JavaScript library to processing advanced mathematical operation with single function
  * 
- * Features still incomplete but it's working!
+ * deMath.js beta | Copyright © 2023 coder-newcomer\
+ * A simple JavaScript library to processing advanced mathematical operation with single function.
+ *
+ * All features is embeded to native `Math` object. Use `Math.extends` to access all function.
+ * 
+ * The features still **incomplete** but it's works!
  */
 
-var deMath = {
-  quotient: (numerator, denumerator) => { return Math.trunc(numerator / denumerator); },
+// for large number, this script need BigInt
+
+/**
+ * Temporary stored data for this script, **do not modify to prevent unexpected behavior**. Can only modified by the script itself.
+ */
+var deMathTmp = { rnd: -1 };
+Math.extends = {
+  /**
+   * Get the integer portion of a division.
+   * @param {number} numerator Number to divide.
+   * @param {number} denominator Divider.
+   */
+  quotient: (numerator, denominator) => { return Math.trunc(numerator / denominator); },
+
+  /**
+   * Get recent number from non-integer result of division // fck translation
+   * @param {number} numerator Number to divide.
+   * @param {number} denumerator Divider.
+   */
   dequotient: (numerator, denumerator) => { return numerator - (denumerator * Math.trunc(numerator / denumerator)); },
-  dec2num: (number, denumber) => {
-    /* 
-    dec2num: Function to convert any decimal number to any available number type (currently: [biner, octal, hexadecimal])
-    Usage: deMath.dec2num(numerator, denumerator)
-           numerator    => first decimal number to be converted
-           denumerator  => value of number type, accept [2 = biner, 8 = octal, 16 = hexadecimal]
-    Example: deMath.dec2num(250, 2) => convert value '250' to number type[2] (biner) => return '11111010'
-    */
-    if (![2, 8, 16].includes(denumber)) {
-      throw new Error(`Invaild denumber(${denumber}) value: expected value [2, 8, 16]`);
+
+  /**
+   * Convert a decimal number to biner, octal, or hexadecimal.
+   * @param {number} number Decimal number to convert.
+   * @param {2|8|16} numbertype Converted number type: `2 = biner` | `8 = octal` | `16 = hexadecimal`.
+   */
+  dec2num: (number, numbertype) => {
+    if (![2, 8, 16].includes(numbertype)) {
+      throw new RangeError(`Invaild numbertype (${ numbertype }) value. Expected numbertype: 2 | 8 | 16`);
     } else {
       var numberator = number;
       var count = [];
-      while (numberator > (denumber - 1)) {
-        count.unshift(dequotient(numberator, denumber));
-        numberator = quotient(numberator, denumber);
+      while (numberator > (numbertype - 1)) {
+        count.unshift(dequotient(numberator, numbertype));
+        numberator = quotient(numberator, numbertype);
       };
-      if (numberator < denumber) { count.unshift(numberator); };
-      if (denumber = 16) {
+      if (numberator < numbertype) { count.unshift(numberator); };
+      if (numbertype = 16) {
         var recount = count.join();
         recount = recount.replaceAll('10', 'A').replaceAll('11', 'B').replaceAll('12', 'C').replaceAll('13', 'D').replaceAll('14', 'E').replaceAll('15', 'F');
         count = recount.split(',');
@@ -34,16 +53,15 @@ var deMath = {
       return count.join('');
     };
   },
+
+  /**
+   * The opposite of dec2num, convert any biner, octal, or hexadecimal number type to decimal number.
+   * @param {number} number Decimal number to convert.
+   * @param {2|8|16} numbertype Converted number type: `2 = biner` | `8 = octal` | `16 = hexadecimal`.
+   */
   num2dec: (number, numbertype) => {
-    /* 
-    num2dec: The opposite of dec2num, function to convert any available number type (currently: [biner, octal, hexadecimal]) to any decimal number
-    Usage: deMath.num2dec(numerator, denumerator)
-           numerator    => first any available number type number to be converted
-           numbertype   => value of the specified number type from numerator, accept [2 = biner, 8 = octal, 16 = hexadecimal]
-    Example: deMath.num2dec(1AB, 16) => convert value '1AB' as number type[16] (hexadecimal) to decimal => return '427'
-    */
     if (![2, 8, 16].includes(numbertype)) {
-      throw new Error(`Invaild numbertype(${numbertype}) value: expected value [2, 8, 16]`);
+      throw new RangeError(`Invaild numbertype (${ numbertype }) value. Expected numbertype: 2 | 8 | 16`);
     } else {
       var arraynumber = String(number.toUpperCase()).split('');
       if (numbertype == 16) {
@@ -56,6 +74,7 @@ var deMath = {
         num = num.replaceAll('F', '15');
         arraynumber = num.split(',');
       };
+      /* Refactored to use for loop
       var counter = 0;
       var counted = counter;
       var multiple = arraynumber.length - 1;
@@ -64,29 +83,59 @@ var deMath = {
         counter += 1;
         multiple -= 1;
       };
+      */
+      var counted = 0;
+      var multiple = arraynumber.length - 1;
+      for (let i = 0; i < arraynumber.length; i++) {
+        counted += arraynumber[i] * Math.pow(numbertype, multiple);
+        multiple -= 1;
+      };
       return counted;
     };
   },
-  getRandom: (min, max, round) => {
-    try {
+
+  /**
+   * Returns a random number value from `min` to `max`, will return normal `Math.random()` if has no parameter defined.
+   * @param {number} min Lowest minimal number. **Default:** `0`
+   * @param {number} max Highest maximal number. **Default:** `min + 1`
+   * @param {boolean|'int'} round Specify the way to round value. `true` = value rounded normally | `'int'` = the maximum is exclusive and the minimum is inclusive. **Default:** `false`
+   * @param {boolean} different Value must be different each call (may working unexpectedly). **Default:** `false`
+   */
+  getRandom: (min, max, round, different) => {
+    if (min == undefined) { min = 0; };
+    if (max == undefined) { max = min - 1; };
+    while (true) {
+      var rand = deMathTmp.rnd;
+      var random = Math.random();
       switch (round) {
         case undefined:
         case false:
-          return Math.random() * (max - min) + min;
+          deMathTmp.rnd = random * (max - min) + min;
+          break;
         case true:
-          return Math.round(Math.random() * (max - min) + min);
+          deMathTmp.rnd = Math.round(random * (max - min) + min);
+          break;
         case 'int':
           min = Math.ceil(min);
           max = Math.floor(max);
-          return Math.floor(Math.random() * (max - min) + min);
+          deMathTmp.rnd = Math.floor(random * (max - min) + min);
+          break;
         default:
-          throw new TypeError('Expected round value = [ true | false | "int" ]');
-      }
-    } catch (e) { throw e; };
-  }
+          throw new RangeError('Expected round value: true | false | "int"');
+      };
+      if (!(different && rand == deMathTmp.rnd)) { break; }
+    };
+    return deMathTmp.rnd;
+  },
+
+  /**
+   * Same as `getRandom()`, but only returns boolean `true` | `false`.
+   */
+  theTruth: () => {
+    return Math.round(Math.random()) == true;
+  },
 };
 
-// for large number, this script need bigInt
-
 // try here on console
-//console.log(deMath.quotient(5, 8));
+//console.log(quotient(5, 8));
+//console.log(Math.extends.theTruth());

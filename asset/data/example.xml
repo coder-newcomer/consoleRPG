@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="example.xsd"?>
 <root>
   <system lang="en" user="admin">userAgent</system>
   <profile>

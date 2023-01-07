@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="system">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="lang" use="required" />
+                <xs:attribute name="user" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="profile">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="user">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string" />
+                    <xs:element name="nickname" type="xs:string" />
+                    <xs:element name="password" type="xs:string" />
+                    <xs:element name="data">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="inventory" type="xs:string" />
+                          <xs:element name="armor" type="xs:string" />
+                          <xs:element name="weapon" type="xs:string" />
+                        </xs:sequence>
+                        <xs:attribute name="level" type="xs:integer" use="required" />
+                        <xs:attribute name="xp" type="xs:float" use="required" />
+                        <xs:attribute name="money" type="xs:float" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="id" type="xs:decimal" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

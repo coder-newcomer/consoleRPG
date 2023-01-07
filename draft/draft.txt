@@ -24,3 +24,10 @@ Kisah Roger Sumatra dan Katak Acumalaka
 
 <div class="line"><span class="msg-icon %type%">%icon%</span><span class="msg-text %send%">%text%</span></div>
 - Need animation support
+
+    attr.split(' ').forEach((element) => {
+      var temp = node.getAttribute(element);
+      if (deString) { temp = sideUtil.deString(temp); };
+      if (returned < 1) { returned = `{"${ element }": ${ temp }}`; }
+      else { returned = returned.substring(0, returned.lastIndexOf('}') - 1).concat(`, "${ element }": ${ temp }}`); };
+    });
