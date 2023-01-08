@@ -1,0 +1,212 @@
+/**
+ * deXML.js\
+ * A simple JavaScript library for processing XML with DOM.
+ * @description This script working with DOM (Document Object Model) Web API, so it can't works without that.
+ * 
+ * For native use, isn't yet available but will be made soon.
+ * 
+ * @version alpha **(Not yet complete)**.
+ * @copyright © 2023 coder-newcomer
+ */
+
+/**
+ * Temporary stored data for this script, **do not modify to prevent unexpected behavior**. Can only modified by the script itself.
+ */
+var deXMLTmp = {};
+
+/**
+ * An example XML data even it's have illegal properties, both `<?xml>` and `<!DOCTYPE>` are ignored by DOM but still kept in the `XML.value`. **Use this only for testing.**
+ */
+var exampleML = `
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="file.dtd" type="application/xml-dtd"?>
+<?xml-model href="file.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<?xml-stylesheet href="file.xsl" type="text/xsl"?>
+<?xml-stylesheet href="file.css" type="text/css"?>
+<!DOCTYPE root [<!ELEMENT root (#PCDATA)>]>
+<!DOCTYPE root PUBLIC "public-id" "file.dtd">
+<!DOCTYPE root PUBLIC "public-id" "file.dtd" []>
+<!DOCTYPE root SYSTEM "file.dtd">
+<!DOCTYPE root SYSTEM "file.dtd" []>
+<root>
+  <system lang="en" user="admin">userAgent</system>
+  <profile>
+    <user id="1">
+      <name>admin</name>
+      <nickname>Admin</nickname>
+      <password>admin</password>
+      <data level="60" xp="9999999" money="9999999">
+        <inventory>yes</inventory>
+        <armor>yes</armor>
+        <weapon>yes</weapon>
+      </data>
+    </user>
+  </profile>
+</root>
+`;
+
+class XML { // multiple xml data support will be added soon
+  constructor (XMLString) { // need to extends and fix this
+    this.value = XMLString;
+
+    /**
+     * Minify, remove space indent and newline.
+     */
+    this.minify = () => { return this.value.trim().replaceAll('  ', '').replaceAll('><', '><').replaceAll('\n', ''); };
+    this.query = () => { return this.minify().substring(this.minify().indexOf('<?'), this.minify().lastIndexOf('?>') + 2).replaceAll('><', '>${split}<').split('${split}'); };
+
+    /**
+     * Property to set when `xml` element must be cleared after some action in document. **Default:** `true`
+     */
+    this.cleanMode = true;
+  };
+
+  /**
+   * Returns the value of a specified attribute on the target node.
+   * @param {string} node Target node and their children seperated by space ' '.
+   * @param {string} attr Attribute name.
+   * @param {boolean} deString Returns with `deString()` function. **Default:** `false`
+  */
+  getAttribute(node, attr, deString) {
+    attr = this.__document__.nodeParse(node).getAttribute(attr);
+    if (deString) { attr = sideUtil.deString(attr); };
+    this.__document__.clear();
+    return attr;
+  };
+
+  /**
+   * @readonly Returns collection of all attribute nodes registered to the specified target node.
+   * @param {string} node Target node and their children seperated by space ' '.
+   * @param {boolean} deString Use `deString()` function to all object value. **Default:** `false`
+  */
+  attributes(node, deString) { // another hard thinking, can you *parse* it anyway?
+    var json = '';
+    var lastNode = node.split(' ');
+    var find = `<${ lastNode[lastNode.length - 1] } `;
+    node = this.__document__.nodeParse(node).parentElement.innerHTML;
+    node = node.substring(node.indexOf(find), node.length);
+    node = node.slice(-(node.indexOf('/>' - 1))).split('" ').forEach((element) => {
+      element = element.split('="');
+      if (deString) { element[1] = sideUtil.deString(element[1]); };
+      if (json < 1) {
+        json = `{"${ element[0] }": ${ element[1] }}`;
+      } else { json = json.substring(0, json.lastIndexOf('}') - 1) + `, "${ element[0] }": ${ element[1] }}`; };
+    });
+    this.__document__.clear();
+    const read = JSON.parse(json);
+    return read;
+  };
+
+  /**
+   * Returns value from target node, will also return children if there is.
+   * @param {string} node Target node and their children seperated by space ' '.
+   * @param {boolean} deString Returns with `deString()` function. **Default:** `false`
+   */
+  getValue(node, deString) {
+    var returned = this.__document__.nodeParse(node).innerHTML;
+    if (deString) { returned = sideUtil.deString(returned); };
+    this.__document__.clear();
+    return returned;
+  };
+
+  /**
+   * Set attribute to target node.
+   * @param {string} node Target node and their children seperated by space ' '.
+   * @param {string} attr Attribute name.
+   * @param {*} value Attribute value to set.
+   */
+  setAttribute(node, attr, value) {
+    this.__document__.nodeParse(node).setAttribute(attr, value);
+    this.__document__.reset();
+    return JSON.parse(`{ "${ attr }": ${ value }, "xml": "${ this.value }" }`);
+  };
+
+  /** 
+   * Set value to target node.
+   * @param {string} node Target node and their children seperated by space ' '.
+   * @param {*} value Value to set, accept `<child>value</child>`.
+   */
+  setValue(node, value) {
+    this.__document__.nodeParse(node).innerHTML = value;
+    this.__document__.reset();
+    return {
+      element: this.__document__.nodeParse(node),
+      xml: this.value
+    };
+  };
+  __document__ = {
+    style: () => { document.querySelectorAll('xml').forEach((element) => { element.style.setProperty('display', 'none', 'important'); }); },
+    reset: () => {
+      this.value = this.__document__.element().innerHTML;
+      this.__document__.clear();
+    },
+    clear: () => { if (this.cleanMode) { this.__document__.remove(); }; return this.cleanMode; },
+    remove: () => { this.__document__.element().remove(); },
+    element: () => {
+      var returned = document.querySelector('html').querySelectorAll('xml');
+      
+      for (let i = 0; i < returned.length; i++) {
+        if (returned[i].id == this.id) {
+          if (returned[i].innerHTML == '') { returned.innerHTML = this.value; };
+          return returned[i];
+        };
+      };
+    },
+    nodeParse: (node) => {
+      var node = node.trim().split(' ');
+      var currentnode = this.__document__.element().querySelector(node[0]);
+      for (let i = 1; i < node.length; i++) {
+        currentnode = currentnode.querySelector(node[i]);
+      };
+      return currentnode;
+    },
+  };
+};
+
+/**
+ * Side Utility function for this script works, can be used globally.
+ */
+var sideUtil = {
+
+  /**
+   * Returns element from target node selector.
+   * @param {string} node Target node selector and their children seperated by space ' ', only match the first node selector.
+   * @example sideUtil.nodeSelector('div button img').src = 'img/foo.png';
+   */
+  nodeSelector: (node) => { // this function can be extended
+    var node = node.trim().split(' ');
+    var currentnode = document.querySelector(node[0]);
+    for (let i = 1; i < node.length; i++) {
+      currentnode = currentnode.querySelector(node[i]);
+    };
+    return currentnode;
+  },
+
+  /**
+   * Same as nodeSelector, but extended to match more type of node selector like jQuery. Please read the usage instruction.
+   * @param {string} node Target node selector and their children seperated by space ' ', Supported node selector `element`, `.class`, `#id`, `[attr=value]`.
+   */
+  nodeQuery: (node) => { // working later, need to finish main project
+
+  },
+
+  /**
+   * Returns number or global property from a string. Suitable for string only returned property or function (such like `getAttribute()` or `innerText`).
+   * @param {string} string Any string within valid value, except that will does nothing (return the same value).
+   * @example console.log(sideUtil.deString('string'), sideUtil.deString('60'), sideUtil.deString('true'), sideUtil.deString('null'));
+   * // return 'string' 60 true null
+   */
+  deString: (string) => { // code looks short and simple, but it's need hard thinking!
+    var keyword = [true, false, NaN, Infinity, null, undefined, ''];
+    var keywordstr = ['true', 'false', 'NaN', 'Infinity', 'null', 'undefined', ''];
+    if (keywordstr.includes(string)) {
+      if (isFinite(string) && !isNaN(Number(string))) { return Number(string); };
+      return keyword[keywordstr.indexOf(string)];
+    } else { return string; };
+  }
+};
+
+/**
+ * You know? Nope!
+ */
+var JSDocTest;
